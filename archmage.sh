@@ -8,8 +8,6 @@ PKGS=(
 
     gnome-keyring "Gnome pass storage" ON \
     neofetch "System information tool" ON \
-    zsh "ZSH shell" ON \
-    zsh-completion "ZSH Tab completion" ON \
 
     # GENERAL UTILITIES
 
@@ -81,6 +79,7 @@ PKGS=(
 )
 
 COSMETICS=(
+    fish
     conky
     rofi
     arc-solid-gtk-theme
@@ -115,7 +114,7 @@ done
 
 # COSTUMIZATION
 
-message2="Costumize XFCE with Archmage package selection and settings? This includes conky, rofi, the arc theme, keyboard shortcuts and other settings."
+message2="Costumize XFCE with Archmage package selection and settings? This includes fish, conky, rofi, arc-solid-gtk-theme, arc-icon-theme, keyboard shortcuts and xfce settings."
 
 if whiptail --yesno "$message2" 10 70; then
     for PKG in ${COSMETICS[@]}; do
@@ -123,6 +122,7 @@ if whiptail --yesno "$message2" 10 70; then
     done 
     cp -r config/xfce4/xfconf/xfce-perchannel-xml/. ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/
     cp -r config/xfce4/terminal/. ${HOME}/.config/xfce4/terminal/
+    cp  config/.bashrc ${HOME}
 fi
 
 echo

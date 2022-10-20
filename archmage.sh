@@ -81,46 +81,45 @@ PKGS=(
 )
 
 COSMETICS=(
-    rofi "Application launcher" ON \
-    arc-solid-gtk-theme "Arc GTK theme" ON \
-    arc-icon-theme "Arc icon theme" ON \
-    xfce4-panel-profiles "(AUR) Panel profiles for XFCE" ON
+    conky
+    rofi
+    arc-solid-gtk-theme
+    arc-icon-theme
 )
 
 # INSTALL YAY
 
+message1="yay is not installed. To continue you need to install yay. Do you whish to install yay?"
+
 if yay --version; then 
     echo
 else 
-    if whiptail --yesno "yay is not installed. To use this script you need an AUR helper that extends to pacman. Do you whish to install yay?" 10 50; then
+    if whiptail --yesno "$message1" 10 50; then
         cd ${HOME}
-        echo "INSTALL YAY"
         git clone https://aur.archlinux.org/yay.git
         cd yay
         makepkg -si
         yay --save --nocleanmenu --nodiffmenu
         cd ${HOME}
-        rm -r yay
     else
-        echo "OK!"
+        exit
     fi
 fi 
 
 # INSTALL PACKAGES
 
-if whiptail --yesno "Continue installation?" 10 50; then
-    SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
-    for PKG in ${SELECTION[@]}; do
-        yay -S $PKG
-    done
-fi
+SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
+for PKG in ${SELECTION[@]}; do
+    yay -S --noconfirm $PKG
+done
 
 # COSTUMIZATION
 
-if whiptail --yesno "Costumize XFCE?" 10 50; then
-    SELECTIONCOS=( $(whiptail --title "Theming & utilities" --separate-output --checklist "Select packages (official):" 24 80 14 "${COSMETICS[@]}" 3>&1 1>&2 2>&3) )
-    for PKG in ${SELECTIONCOS[@]}; do
-        yay -S $PKG
+message2="Costumize XFCE with Archmage package selection and settings? This includes conky, rofi, the arc theme, keyboard shortcuts and other settings."
+
+if whiptail --yesno "$message2" 10 70; then
+    for PKG in ${COSMETICS[@]}; do
+        yay -S --noconfirm $PKG
     done 
     cp -r config/xfce4/xfconf/xfce-perchannel-xml/. ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/
     cp -r config/xfce4/terminal/. ${HOME}/.config/xfce4/terminal/

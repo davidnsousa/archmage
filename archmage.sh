@@ -106,18 +106,13 @@ else
     fi
 fi 
 
-# SELECT PACKAGES
-
-SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
-
 # INSTALL PACKAGES
 
 if whiptail --yesno "Continue installation?" 10 50; then
+    SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTION[@]}; do
         yay -S $PKG
     done
-else
-    echo "OK!"
 fi
 
 # COSTUMIZATION
@@ -128,8 +123,7 @@ if whiptail --yesno "Costumize XFCE?" 10 50; then
         yay -S $PKG
     done 
     cp -r config/xfce4/xfconf/xfce-perchannel-xml/. ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/
-else
-    echo "OK!"
+    cp -r config/xfce4/terminal/. ${HOME}/.config/xfce4/terminal/
 fi
 
 echo

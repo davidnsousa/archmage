@@ -6,10 +6,10 @@ PKGS=(
 
     # TERMINAL UTILITIES
 
-    gnome-keyring "Gnome password storage" ON \
-    neofetch "Command-line system information tool" ON \
+    gnome-keyring "Gnome pass storage" ON \
+    neofetch "System information tool" ON \
     zsh "ZSH shell" ON \
-    zsh-completion "Tab completion for ZSH" ON \
+    zsh-completion "ZSH Tab completion" ON \
 
     # GENERAL UTILITIES
 
@@ -22,15 +22,15 @@ PKGS=(
     geany "Text editor" ON \
     git "Version control" ON \
     octave "Scientific Programming Language" ON \
-    vscodium-bin "(AUR) Community-driven distribution of VSCode" ON \
-    rstudio-desktop-bin "(AUR) Development environment for R" ON \
+    vscodium-bin "(AUR) VSCode like IDE" ON \
+    rstudio-desktop-bin "(AUR) IDE for R" ON \
     arduino-ide-bin "(AUR) Arduino IDE" ON \
 
     # WEB TOOLS
 
     chromium "Open-source web browser" ON \
     firefox "Mozilla web browser" ON \
-    librewolf-bin "(AUR) Customized Firefox for privacy and security" ON \
+    librewolf-bin "(AUR) Customized Firefox" ON \
     thunderbird "Mozilla e-mail client" ON \
     transmission-gtk "BitTorrent client" ON \
 
@@ -42,8 +42,8 @@ PKGS=(
     # COMMUNICATIONS
 
     zoom "(AUR) Video Communications" ON \
-    telegram-desktop-bin "(AUR) Instant messaging service" ON \
-    slack-desktop "(AUR) Messaging program for office" ON \
+    telegram-desktop-bin "(AUR) Messaging service" ON \
+    slack-desktop "(AUR) Messaging for office" ON \
     signal-desktop-beta-bin "(AUR) Secure messaging service" ON \
 
     # MEDIA
@@ -66,14 +66,14 @@ PKGS=(
 
     # VIRTUALIZATION
 
-    virtualbox "Hypervisor for x86 virtualization" ON \
-    virtualbox-host-modules-arch "Virtualbox host kernel modules for Arch Kernel" ON \
-    virtualbox-host-modules-dkms "Virtualbox host kernel modules for other Kernels" OFF \
+    virtualbox "Virtualization" ON \
+    virtualbox-host-modules-arch "Virtualbox linux kernel modules" ON \
+    virtualbox-host-modules-dkms "Virtualbox other kernels modules" OFF \
 
     # PRIVACY AND SECURITY TOOLS
 
     mullvad-vpn-bin "(AUR) Mullvad VPN service" ON \
-    protonmail-bridge-bin "(AUR) Protonmail bidge for e-mail clients" ON \
+    protonmail-bridge-bin "(AUR) Protonmail bidge" ON \
 
     # OTHER
 
@@ -108,7 +108,7 @@ fi
 
 # SELECT PACKAGES
 
-SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 22 100 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
+SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
 
 # INSTALL PACKAGES
 
@@ -123,7 +123,7 @@ fi
 # COSTUMIZATION
 
 if whiptail --yesno "Costumize XFCE?" 10 50; then
-    SELECTIONCOS=( $(whiptail --title "Theming & utilities" --separate-output --checklist "Select packages (official):" 22 100 14 "${COSMETICS[@]}" 3>&1 1>&2 2>&3) )
+    SELECTIONCOS=( $(whiptail --title "Theming & utilities" --separate-output --checklist "Select packages (official):" 24 80 14 "${COSMETICS[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTIONCOS[@]}; do
         yay -S $PKG
     done 

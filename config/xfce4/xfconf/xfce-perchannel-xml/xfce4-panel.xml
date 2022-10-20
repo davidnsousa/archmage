@@ -22,6 +22,7 @@
         <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="4"/>
+        <value type="int" value="6"/>
         <value type="int" value="5"/>
       </property>
       <property name="position" type="string" value="p=8;x=512;y=752"/>
@@ -78,5 +79,6 @@
       <property name="show-frame" type="bool" value="true"/>
       <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
     </property>
+    <property name="plugin-6" type="string" value="power-manager-plugin"/>
   </property>
 </channel>

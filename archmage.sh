@@ -105,6 +105,10 @@ else
     fi
 fi 
 
+if whiptail --yesno "Do you whish update your system before continuing?" 10 50; then
+    yay
+fi
+
 # INSTALL PACKAGES
 
 SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
@@ -114,7 +118,7 @@ done
 
 # COSTUMIZATION
 
-message2="Costumize XFCE with Archmage package selection and settings? This includes fish, conky, rofi, arc-solid-gtk-theme, arc-icon-theme, keyboard shortcuts and xfce settings."
+message2="Costumize XFCE with Archmage package selection and settings? This includes fish, conky, rofi, arc-solid-gtk-theme, arc-icon-theme, keyboard shortcuts and other cosmetic changes."
 
 if whiptail --yesno "$message2" 10 70; then
     for PKG in ${COSMETICS[@]}; do

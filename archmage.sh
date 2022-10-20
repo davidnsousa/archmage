@@ -13,6 +13,8 @@ PKGS=(
 
     catfish "File search tool" ON \
     bitwarden "Password manager" ON \
+    gigolo "Access remote filesystems" ON \
+    baobab "Disk usage analyzer" ON \
 
     # DEVELOPMENT
 
@@ -59,6 +61,7 @@ PKGS=(
     galculator "Gnome calculator" ON \
     mousepad "Text editor" ON \
     xpdf "PDF reader for X" ON \
+    atril "PDF reader" ON \
     onlyoffice-bin "(AUR) Office suite" ON \
     zotero-bin "(AUR) Reference manager" ON \
 

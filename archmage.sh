@@ -13,7 +13,7 @@ PKGS=(
 
     catfish "File search tool" ON \
     bitwarden "Password manager" ON \
-    gigolo "Access remote filesystems" ON \
+    gigolo "(AUR) Access remote filesystems" ON \
     baobab "Disk usage analyzer" ON \
 
     # DEVELOPMENT

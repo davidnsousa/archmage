@@ -126,7 +126,9 @@ if whiptail --yesno "$message2" 10 70; then
     done 
     cp -r config/xfce4/xfconf/xfce-perchannel-xml/. ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/
     cp -r config/xfce4/terminal/. ${HOME}/.config/xfce4/terminal/
-    cp  config/.bashrc ${HOME}
+    cp config/.bashrc ${HOME}
+    mkdir ${HOME}/.config/menus
+    cp config/menus/xfce-applications.menu ${HOME}/.config/menus
 fi
 
 echo

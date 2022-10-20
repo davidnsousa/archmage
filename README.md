@@ -12,5 +12,6 @@ Fork it and change it according to your needs.
 git clone https://github.com/davidnsousa/archmage
 cd archmage
 sh archmage.sh
+```
 
 `archmage.sh' will ask to (1) install yay (if not installed), (2) update the system, (3) choose from a preselection of packages to install and (4) costumize XFCE with a preselection of packages and settings.

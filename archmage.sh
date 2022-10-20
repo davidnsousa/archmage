@@ -124,11 +124,13 @@ if whiptail --yesno "$message2" 10 70; then
     for PKG in ${COSMETICS[@]}; do
         yay -S --noconfirm $PKG
     done 
-    cp -r config/xfce4/xfconf/xfce-perchannel-xml/. ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/
-    cp -r config/xfce4/terminal/. ${HOME}/.config/xfce4/terminal/
+    cp config/xfce4/xfconf/xfce-perchannel-xml/* ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
+    cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
     cp config/.bashrc ${HOME}
     mkdir ${HOME}/.config/menus
-    cp config/menus/xfce-applications.menu ${HOME}/.config/menus
+    cp config/menus/* ${HOME}/.config/menus
+    mkdir ${HOME}/.config/rofi
+    cp config/rofi/* ${HOME}/.config/rofi/
 fi
 
 echo

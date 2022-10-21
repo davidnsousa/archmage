@@ -164,7 +164,9 @@ if whiptail --yesno "$message2" 10 70; then
     xfconf-query -c xfce4-desktop -n -t 'bool' -p /desktop-menu/show -s false
     # no save on exit
     xfconf-query -c xfce4-session -n -t 'bool' -p /general/SaveOnExit -s false 
-
+    # window cycle preview false
+    xfconf-query -c xfwm4 -p /general/cycle_preview -s false  
+    
     # ROFI SETTINGS
 
     mkdir ${HOME}/.config/rofi

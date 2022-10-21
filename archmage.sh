@@ -100,7 +100,7 @@ COSMETICS=(
 message1="yay is not installed. To continue you need to install yay. Do you whish to install yay?"
 
 if yay --version; then 
-    echo
+    echo "yay exists!"
 else 
     if whiptail --yesno "$message1" 10 50; then
         cd ${HOME}

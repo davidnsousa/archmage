@@ -144,6 +144,7 @@ if whiptail --yesno "$message2" 10 70; then
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>f" -s "thunar"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>e" -s "xfce4-session-logout"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>t" -s "exo-open --launch TerminalEmulator"
     # panel settings
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
@@ -175,6 +176,7 @@ if whiptail --yesno "$message2" 10 70; then
 
     # FISH SETTINGS
 
+    cd ${HOME}
     echo "exec fish" > .bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
     cp config/fish/* ${HOME}/.config/fish

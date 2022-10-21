@@ -168,6 +168,11 @@ if whiptail --yesno "$message2" 10 70; then
     mkdir ${HOME}/.config/rofi
     cp config/rofi/* ${HOME}/.config/rofi/
 
+    # CONKY SETTINGS
+
+    mkdir ${HOME}/.config/conky
+    cp config/conky/* ${HOME}/.config/conky/
+
     # FISH SETTINGS
 
     echo "exec fish" > .bashrc

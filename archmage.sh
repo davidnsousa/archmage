@@ -122,7 +122,11 @@ fi
 
 SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
 for PKG in ${SELECTION[@]}; do
-    yay -S --noconfirm $PKG
+    if yay -q -Qi $PKG; then
+        echo "already exists!"
+    else
+        yay -S --noconfirm $PKG
+    fi
 done
 
 # COSTUMIZATION
@@ -134,8 +138,8 @@ if whiptail --yesno "$message2" 10 70; then
     # INSTALL cosmetic packages
 
     for PKG in ${COSMETICS[@]}; do
-        if yay -Qi $PKG; then
-            echo
+        if yay -q -Qi $PKG; then
+            echo "already exists!"
         else
             yay -S --noconfirm $PKG
         fi

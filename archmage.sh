@@ -150,10 +150,10 @@ if whiptail --yesno "$message2" 10 70; then
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
     # terminal settings
-    cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
+    cp config/xfce4/terminal/* ${XDG_CONFIG_HOME}/xfce4/terminal
     # applicationsmenu settings
-    mkdir ${HOME}/.config/menus
-    cp config/menus/* ${HOME}/.config/menus
+    mkdir ${XDG_CONFIG_HOME}/menus
+    cp config/menus/* ${XDG_CONFIG_HOME}/menus
     # set theme name
     xfconf-query -c xsettings -p /Net/ThemeName -s Arc-Dark-solid
     # set icon theme
@@ -167,25 +167,24 @@ if whiptail --yesno "$message2" 10 70; then
 
     # ROFI SETTINGS
 
-    mkdir ${HOME}/.config/rofi
-    cp config/rofi/* ${HOME}/.config/rofi/
+    mkdir ${XDG_CONFIG_HOME}/rofi
+    cp config/rofi/* ${XDG_CONFIG_HOME}/rofi/
 
     # CONKY SETTINGS
 
-    mkdir ${HOME}/.config/conky
-    cp config/conky/* ${HOME}/.config/conky/
+    mkdir ${XDG_CONFIG_HOME}/conky
+    cp config/conky/* ${XDG_CONFIG_HOME}/conky/
 
     # FISH SETTINGS
 
-    cd ${HOME}
-    echo "exec fish" > .bashrc
+    echo "exec fish" > ${HOME}/.bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-    cp config/fish/* ${HOME}/.config/fish
+    cp config/fish/* ${XDG_CONFIG_HOME}/fish
 
     # AUTOSTART
 
-    mkdir ${HOME}/.config/autostart
-    cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
+    mkdir ${XDG_CONFIG_HOME}/autostart
+    cp /usr/share/applications/conky.desktop ${XDG_CONFIG_HOME}/autostart
 fi
 
 echo

@@ -150,6 +150,7 @@ if whiptail --yesno "$message2" 10 70; then
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
     # terminal settings
+    mkdir ${HOME}/.config/xfce4/terminal
     cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
     # applicationsmenu settings
     mkdir ${HOME}/.config/menus
@@ -170,12 +171,12 @@ if whiptail --yesno "$message2" 10 70; then
     # ROFI SETTINGS
 
     mkdir ${HOME}/.config/rofi
-    cp config/rofi/* ${HOME}/.config/rofi/
+    cp config/rofi/* ${HOME}/.config/rofi
 
     # CONKY SETTINGS
 
     mkdir ${HOME}/.config/conky
-    cp config/conky/* ${HOME}/.config/conky/
+    cp config/conky/* ${HOME}/.config/conky
 
     # AUTOSTART
 

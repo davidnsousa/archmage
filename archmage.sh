@@ -134,11 +134,14 @@ if whiptail --yesno "$message2" 10 70; then
     done
 
     # XFCE settings
+
     cp config/xfce4/xfconf/xfce-perchannel-xml/* ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
     cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
     cp config/.bashrc ${HOME}
     mkdir ${HOME}/.config/menus
     cp config/menus/* ${HOME}/.config/menus
+
+    xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep "0/last-image") -s /usr/share/backgrounds/archlinux/small.png
 
     # rofi settings
 

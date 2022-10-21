@@ -37,7 +37,7 @@
       <property name="custom-menu" type="bool" value="false"/>
       <property name="show-button-title" type="bool" value="true"/>
       <property name="show-generic-names" type="bool" value="false"/>
-      <property name="show-menu-icons" type="bool" value="false"/>
+      <property name="show-menu-icons" type="bool" value="true"/>
       <property name="show-tooltips" type="bool" value="false"/>
     </property>
     <property name="plugin-2" type="string" value="tasklist">

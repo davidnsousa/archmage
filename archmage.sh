@@ -158,6 +158,8 @@ if whiptail --yesno "$message2" 10 70; then
     cp config/menus/* ${HOME}/.config/menus
     # set theme name
     xfconf-query -c xsettings -p /Net/ThemeName -s Arc-Dark-solid
+    # set window manager theme
+    xfconf-query -c xfwm4 -p /general/theme -s "Arc-Dark" 
     # set icon theme
     xfconf-query -c xsettings -p /Net/IconThemeName -s Tela 
     # set wallpaper

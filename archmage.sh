@@ -134,7 +134,11 @@ if whiptail --yesno "$message2" 10 70; then
     # INSTALL cosmetic packages
 
     for PKG in ${COSMETICS[@]}; do
-        yay -S --noconfirm $PKG
+        if yay -Qi $PKG; then
+            echo
+        else
+            yay -S --noconfirm $PKG
+        fi
     done
 
     # XFCE SETTINGS

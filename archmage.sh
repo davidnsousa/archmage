@@ -49,6 +49,7 @@ PKGS=(
     # MEDIA
 
     vlc "Media player" ON \
+    lmms "Linux multi-media studio" ON \
 
     # GRAPHICS AND DESIGN
 

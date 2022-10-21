@@ -140,7 +140,6 @@ if whiptail --yesno "$message2" 10 70; then
     # XFCE SETTINGS
 
     # keyboard shortcuts
-    xfconf-query -c xfce4-keyboard-shortcuts -p  "/xfwm4/custom/<Super>d" -r
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>d" -s "show_desktop_key"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>x" -s "rofi -show"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>f" -s "thunar"

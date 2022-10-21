@@ -146,6 +146,7 @@ if whiptail --yesno "$message2" 10 70; then
     # fish settings
 
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+    cp config/fish/* ${HOME}/.config/fish
 fi
 
 echo

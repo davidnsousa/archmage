@@ -2,6 +2,8 @@
 
 # PACKAGES TO CHOOSE FROM 
 
+ARCHMAGEDIR=$(pwd)
+
 PKGS=(
 
     # TERMINAL UTILITIES
@@ -87,9 +89,9 @@ COSMETICS=(
     conky
     rofi
     arc-solid-gtk-theme
-    tela-icon-theme
     archlinux-wallpaper
     xfce4-panel-profiles
+    tela-icon-theme
 )
 
 # INSTALL YAY
@@ -105,7 +107,7 @@ else
         cd yay
         makepkg -si
         yay --save --nocleanmenu --nodiffmenu
-        cd ${HOME}
+        cd $ARCHMAGEDIR
     else
         exit
     fi

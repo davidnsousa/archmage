@@ -6,80 +6,80 @@ PKGS=(
 
     # TERMINAL UTILITIES
 
-    gnome-keyring "Gnome pass storage" ON \
-    neofetch "System information tool" ON \
+    gnome-keyring "Gnome pass storage" OFF \
+    neofetch "System information tool" OFF \
 
     # GENERAL UTILITIES
 
-    catfish "File search tool" ON \
-    bitwarden "Password manager" ON \
-    gigolo "(AUR) Access remote filesystems" ON \
-    baobab "Disk usage analyzer" ON \
+    catfish "File search tool" OFF \
+    bitwarden "Password manager" OFF \
+    gigolo "(AUR) Access remote filesystems" OFF \
+    baobab "Disk usage analyzer" OFF \
 
     # DEVELOPMENT
 
-    base-devel "Development packages" ON \
-    geany "Text editor" ON \
-    git "Version control" ON \
-    octave "Scientific Programming Language" ON \
-    vscodium-bin "(AUR) VSCode like IDE" ON \
-    rstudio-desktop-bin "(AUR) IDE for R" ON \
-    arduino-ide-bin "(AUR) Arduino IDE" ON \
+    base-devel "Development packages" OFF \
+    geany "Text editor" OFF \
+    git "Version control" OFF \
+    octave "Scientific Programming Language" OFF \
+    vscodium-bin "(AUR) VSCode like IDE" OFF \
+    rstudio-desktop-bin "(AUR) IDE for R" OFF \
+    arduino-ide-bin "(AUR) Arduino IDE" OFF \
 
     # WEB TOOLS
 
-    chromium "Open-source web browser" ON \
-    firefox "Mozilla web browser" ON \
-    librewolf-bin "(AUR) Customized Firefox" ON \
-    thunderbird "Mozilla e-mail client" ON \
-    transmission-gtk "BitTorrent client" ON \
+    chromium "Open-source web browser" OFF \
+    firefox "Mozilla web browser" OFF \
+    librewolf-bin "(AUR) Customized Firefox" OFF \
+    thunderbird "Mozilla e-mail client" OFF \
+    transmission-gtk "BitTorrent client" OFF \
 
     # CLOUD UTILITIES
 
-    megasync-bin "(AUR) MEGA Desktop App" ON \
-    thunar-megasync-bin "(AUR) MEGA thunar utility" ON \
+    megasync-bin "(AUR) MEGA Desktop App" OFF \
+    thunar-megasync-bin "(AUR) MEGA thunar utility" OFF \
 
     # COMMUNICATIONS
 
-    zoom "(AUR) Video Communications" ON \
-    telegram-desktop-bin "(AUR) Messaging service" ON \
-    slack-desktop "(AUR) Messaging for office" ON \
-    signal-desktop-beta-bin "(AUR) Secure messaging service" ON \
+    zoom "(AUR) Video Communications" OFF \
+    telegram-desktop-bin "(AUR) Messaging service" OFF \
+    slack-desktop "(AUR) Messaging for office" OFF \
+    signal-desktop-beta-bin "(AUR) Secure messaging service" OFF \
 
     # MEDIA
 
-    vlc "Media player" ON \
-    lmms "Linux multi-media studio" ON \
+    vlc "Media player" OFF \
+    lmms "Linux multi-media studio" OFF \
 
     # GRAPHICS AND DESIGN
 
-    gcolor2 "Gnome color picker" ON \
-    gimp "Image editor" ON \
-    inkscape "Vector image editor" ON \
+    gcolor2 "Gnome color picker" OFF \
+    gimp "Image editor" OFF \
+    inkscape "Vector image editor" OFF \
 
     # PRODUCTIVITY
 
-    galculator "Gnome calculator" ON \
-    mousepad "Text editor" ON \
-    xpdf "PDF reader for X" ON \
-    atril "PDF reader" ON \
-    onlyoffice-bin "(AUR) Office suite" ON \
-    zotero-bin "(AUR) Reference manager" ON \
+    galculator "Gnome calculator" OFF \
+    mousepad "Text editor" OFF \
+    xpdf "PDF reader for X" OFF \
+    atril "PDF reader" OFF \
+    onlyoffice-bin "(AUR) Office suite" OFF \
+    zotero-bin "(AUR) Reference manager" OFF \
 
     # VIRTUALIZATION
 
-    virtualbox "Virtualization" ON \
-    virtualbox-host-modules-arch "Virtualbox linux kernel modules" ON \
+    virtualbox "Virtualization" OFF \
+    virtualbox-host-modules-arch "Virtualbox linux kernel modules" OFF \
     virtualbox-host-modules-dkms "Virtualbox other kernels modules" OFF \
 
     # PRIVACY AND SECURITY TOOLS
 
-    mullvad-vpn-bin "(AUR) Mullvad VPN service" ON \
-    protonmail-bridge-bin "(AUR) Protonmail bidge" ON \
+    mullvad-vpn-bin "(AUR) Mullvad VPN service" OFF \
+    protonmail-bridge-bin "(AUR) Protonmail bidge" OFF \
 
     # OTHER
 
-    stellarium-bin "(AUR) Astronomy software" ON 
+    stellarium-bin "(AUR) Astronomy software" OFF 
 )
 
 COSMETICS=(

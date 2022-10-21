@@ -161,7 +161,7 @@ if whiptail --yesno "$message2" 10 70; then
     # set wallpaper
     xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep "0/last-image") -s /usr/share/backgrounds/archlinux/small.png
     # no desktop apps menu
-    xfconf-query -c xfce4-desktop -p /desktop-menu/show -s false
+    xfconf-query -c xfce4-desktop -n -t 'bool' /desktop-menu/show -s false
     # no save on exit
     xfconf-query -c xfce4-session -n -t 'bool' /general/SaveOnExit -s false 
 

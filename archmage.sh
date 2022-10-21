@@ -124,16 +124,28 @@ done
 message2="Costumize XFCE with Archmage package selection and settings? This includes fish, conky, rofi, arc-solid-gtk-theme, arc-icon-theme, keyboard shortcuts and other cosmetic changes."
 
 if whiptail --yesno "$message2" 10 70; then
+
+    # INSTALL cosmetic packages
+
     for PKG in ${COSMETICS[@]}; do
         yay -S --noconfirm $PKG
-    done 
+    done
+
+    # XFCE settings
     cp config/xfce4/xfconf/xfce-perchannel-xml/* ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
     cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
     cp config/.bashrc ${HOME}
     mkdir ${HOME}/.config/menus
     cp config/menus/* ${HOME}/.config/menus
+
+    # rofi settings
+
     mkdir ${HOME}/.config/rofi
     cp config/rofi/* ${HOME}/.config/rofi/
+
+    # fish settings
+
+    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 fi
 
 echo

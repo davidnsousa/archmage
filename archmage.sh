@@ -89,6 +89,7 @@ COSMETICS=(
     arc-solid-gtk-theme
     tela-icon-theme
     archlinux-wallpaper
+    xfce4-panel-profiles
 )
 
 # INSTALL YAY
@@ -133,23 +134,41 @@ if whiptail --yesno "$message2" 10 70; then
         yay -S --noconfirm $PKG
     done
 
-    # XFCE settings
+    # XFCE SETTINGS
 
-    cp config/xfce4/xfconf/xfce-perchannel-xml/* ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
+    # keyboard shortcuts
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>x" -s "rofi -show"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>d" -s "show_desktop_key"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>f" -s "thunar"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>e" -s "xfce4-session-logout"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
+    # panel settings
+    xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
+    xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
+    # terminal settings
     cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
-    cp config/.bashrc ${HOME}
+    # applicationsmenu settings
     mkdir ${HOME}/.config/menus
     cp config/menus/* ${HOME}/.config/menus
-
+    # set theme name
+    xfconf-query -c xsettings -p /Net/ThemeName -s Arc-Dark-solid
+    # set icon theme
+    xfconf-query -c xsettings -p /Net/IconThemeName -s Tela 
+    # set wallpaper
     xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep "0/last-image") -s /usr/share/backgrounds/archlinux/small.png
+    # no desktop apps menu
+    xfconf-query -c xfce4-desktop -p /desktop-menu/show -s false
+    # no save on exit
+    xfconf-query -c xfce4-session -p /general/SaveOnExit -s false 
 
-    # rofi settings
+    # ROFI SETTINGS
 
     mkdir ${HOME}/.config/rofi
     cp config/rofi/* ${HOME}/.config/rofi/
 
-    # fish settings
+    # FISH SETTINGS
 
+    echo "exec fish" > .bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
     cp config/fish/* ${HOME}/.config/fish
 fi

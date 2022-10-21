@@ -190,7 +190,7 @@ if whiptail --yesno "$message2" 10 70; then
 
     echo "exec fish" > ${HOME}/.bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-    cp config/fish/* ${HOME}/.config/fish
+    cp config/fish/* {$HOME}/.config/fish
 fi
 
 echo

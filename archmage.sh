@@ -86,7 +86,7 @@ COSMETICS=(
     conky
     rofi
     arc-solid-gtk-theme
-    arc-icon-theme
+    tela-icon-theme
 )
 
 # INSTALL YAY
@@ -121,7 +121,7 @@ done
 
 # COSTUMIZATION
 
-message2="Costumize XFCE with Archmage package selection and settings? This includes fish, conky, rofi, arc-solid-gtk-theme, arc-icon-theme, keyboard shortcuts and other cosmetic changes."
+message2="Costumize XFCE with Archmage package selection and settings? This includes fish, conky, rofi, theming, keyboard shortcuts and other cosmetic changes."
 
 if whiptail --yesno "$message2" 10 70; then
 

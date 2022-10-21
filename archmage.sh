@@ -181,6 +181,11 @@ if whiptail --yesno "$message2" 10 70; then
     echo "exec fish" > .bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
     cp config/fish/* ${HOME}/.config/fish
+
+    # AUTOSTART
+
+    mkdir ${HOME}/.config/autostart
+    cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
 fi
 
 echo

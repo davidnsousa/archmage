@@ -175,16 +175,16 @@ if whiptail --yesno "$message2" 10 70; then
     mkdir ${HOME}/.config/conky
     cp config/conky/* ${HOME}/.config/conky/
 
+    # AUTOSTART
+
+    mkdir ${HOME}/.config/autostart
+    cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
+
     # FISH SETTINGS
 
     echo "exec fish" > ${HOME}/.bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
     cp config/fish/* ${HOME}/.config/fish
-
-    # AUTOSTART
-
-    mkdir ${HOME}/.config/autostart
-    cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
 fi
 
 echo

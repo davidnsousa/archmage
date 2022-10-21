@@ -88,6 +88,7 @@ COSMETICS=(
     rofi
     arc-solid-gtk-theme
     tela-icon-theme
+    archlinux-wallpaper
 )
 
 # INSTALL YAY

@@ -140,7 +140,7 @@ if whiptail --yesno "$message2" 10 70; then
 
     # keyboard shortcuts
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>x" -s "rofi -show"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>d" -s "show_desktop_key"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>d" -s "show_desktop_key"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>f" -s "thunar"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>e" -s "xfce4-session-logout"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"

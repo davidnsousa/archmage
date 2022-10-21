@@ -92,6 +92,7 @@ COSMETICS=(
     archlinux-wallpaper
     xfce4-panel-profiles
     tela-icon-theme
+    ttf-opensans
 )
 
 # INSTALL YAY

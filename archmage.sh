@@ -163,6 +163,8 @@ if whiptail --yesno "$message2" 10 70; then
     # applicationsmenu settings
     mkdir ${HOME}/.config/menus
     cp config/menus/* ${HOME}/.config/menus
+    # set font
+    xfconf-query -c xsettings -p /Gtk/FontName -s "Open Sans 10"
     # set theme name
     xfconf-query -c xsettings -p /Net/ThemeName -s Arc-Dark-solid
     # set window manager theme

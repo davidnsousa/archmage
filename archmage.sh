@@ -173,6 +173,8 @@ if whiptail --yesno "$message2" 10 70; then
     xfconf-query -c xsettings -p /Net/IconThemeName -s Tela 
     # set wallpaper
     xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep "0/last-image") -s /usr/share/backgrounds/archlinux/small.png
+    # add power-manager to panel
+    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-6 -s power-manager-plugin
     # no desktop apps menu
     xfconf-query -c xfce4-desktop -n -t 'bool' -p /desktop-menu/show -s false
     # no save on exit

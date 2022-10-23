@@ -221,9 +221,10 @@ constumize_xfce () {
     # no save on exit
     xfconf-query -c xfce4-session -n -t 'bool' -p /general/SaveOnExit -s false 
     # no window cycle preview
-    xfconf-query -c xfwm4 -p /general/cycle_preview -s false  
-    
+    xfconf-query -c xfwm4 -p /general/cycle_preview -s false
+
     # LIGHTDM SETTINGS
+    sudo cp /usr/share/backgrounds/archlinux/small.png /usr/share/pixmaps
     sudo cp config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 
     # ROFI SETTINGS
@@ -245,9 +246,8 @@ constumize_xfce () {
 
     echo "exec fish" > ${HOME}/.bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-    # now fish is the user shell
     # remove fish greeting
-    set -U fish_greeting
+    fish -c "set -U fish_greeting"
 
     menu 4
 }

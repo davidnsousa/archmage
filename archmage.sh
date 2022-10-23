@@ -245,7 +245,6 @@ constumize_xfce () {
     # FISH SETTINGS
 
     echo "exec fish" > ${HOME}/.bashrc
-    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
     # remove fish greeting
     fish -c "set -U fish_greeting"
 

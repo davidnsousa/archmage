@@ -245,7 +245,9 @@ constumize_xfce () {
 
     echo "exec fish" > ${HOME}/.bashrc
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-    cp config/fish/* {$HOME}/.config/fish
+    # now fish is the user shell
+    # remove fish greeting
+    set -U fish_greeting
 
     menu 4
 }

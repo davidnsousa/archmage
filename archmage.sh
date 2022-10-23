@@ -194,6 +194,10 @@ constumize_xfce () {
     # panel settings
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
+    # add power-manager to panel
+    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-6 -s power-manager-plugin
+    # change panel clock format
+    xfconf-query -c xfce4-panel -p /plugins/plugin-5/digital-format -s "%a %_d %b, %R"
     # terminal settings
     mkdir ${HOME}/.config/xfce4/terminal
     cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
@@ -212,10 +216,6 @@ constumize_xfce () {
     xfconf-query -c xsettings -p /Gtk/CursorThemeName -s Breeze_Blue
     # set wallpaper
     xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep "0/last-image") -s /usr/share/backgrounds/archlinux/small.png
-    # add power-manager to panel
-    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-6 -s power-manager-plugin
-    # change panel clock format
-    xfconf-query -c xfce4-panel -p /plugins/plugin-5/digital-format -s "%a %_d %b, %R"
     # no desktop apps menu
     xfconf-query -c xfce4-desktop -n -t 'bool' -p /desktop-menu/show -s false
     # no save on exit

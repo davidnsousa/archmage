@@ -93,6 +93,9 @@ COSMETICS=(
     xfce4-panel-profiles
     tela-icon-theme
     ttf-opensans
+    breeze-blue-cursor-theme
+    breeze-snow-cursor-theme
+    breeze-obsidian-cursor-theme     
 )
 
 # INSTALL YAY
@@ -165,12 +168,14 @@ if whiptail --yesno "$message2" 10 70; then
     cp config/menus/* ${HOME}/.config/menus
     # set font
     xfconf-query -c xsettings -p /Gtk/FontName -s "Open Sans 10"
-    # set theme name
+    # set gtk theme
     xfconf-query -c xsettings -p /Net/ThemeName -s Arc-Dark-solid
     # set window manager theme
     xfconf-query -c xfwm4 -p /general/theme -s Arc-Dark-solid
     # set icon theme
-    xfconf-query -c xsettings -p /Net/IconThemeName -s Tela 
+    xfconf-query -c xsettings -p /Net/IconThemeName -s Tela
+    # set cursor theme
+    xfconf-query -c xsettings -p /Gtk/CursorThemeName -s Breeze_Blue
     # set wallpaper
     xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep "0/last-image") -s /usr/share/backgrounds/archlinux/small.png
     # add power-manager to panel

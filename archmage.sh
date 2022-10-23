@@ -167,11 +167,7 @@ update_system () {
 install_packages () {
     SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTION[@]}; do
-        if yay -q -Qs $PKG; then
-            echo "already exists!"
-        else
-            yay -S --noconfirm $PKG
-        fi
+        yay -S --noconfirm $PKG
     done
     if ! $AUTOMATIC; then menu 4; fi
 }
@@ -183,11 +179,7 @@ constumize_xfce () {
     # INSTALL cosmetic packages
 
     for PKG in ${COSMETICS[@]}; do
-        if yay -q -Qs $PKG; then
-            echo "already exists!"
-        else
-            yay -S --noconfirm $PKG
-        fi
+        yay -S --noconfirm $PKG
     done
 
     # XFCE SETTINGS

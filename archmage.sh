@@ -247,6 +247,8 @@ constumize_xfce () {
     echo "exec fish" > ${HOME}/.bashrc
     # remove fish greeting
     fish -c "set -U fish_greeting"
+    # choose prompt
+    fish -c "fish_config prompt choose astronaut; fish_config prompt save"
 
     menu 4
 }

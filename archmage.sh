@@ -189,6 +189,9 @@ if whiptail --yesno "$message2" 10 70; then
     # window cycle preview false
     xfconf-query -c xfwm4 -p /general/cycle_preview -s false  
     
+    # LIGHTDM SETTINGS
+    sudo cp config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
+
     # ROFI SETTINGS
 
     mkdir ${HOME}/.config/rofi

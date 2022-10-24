@@ -239,6 +239,7 @@ constumize_xfce () {
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>e" -s "xfce4-session-logout"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>t" -s "exo-open --launch TerminalEmulator"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>q" -s "close_window_key"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>d" -s "show_desktop_key"    
 
     menu 4

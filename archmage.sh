@@ -172,7 +172,7 @@ install_packages () {
     if ! $AUTOMATIC; then menu 4; fi
 }
 
-# COSTUMIZATION
+# COSTUMIZATION - needs xfce4 and xfce-goodies
 
 constumize_xfce () {
 
@@ -189,6 +189,9 @@ constumize_xfce () {
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
     # add power-manager to panel
     xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-6 -s power-manager-plugin
+    # add pulseaudio to panel
+    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-7 -s pulseaudio
+    xfconf-query -c xfce4-panel -n -t 'bool' -p /plugins/plugin-7/enable-keyboard-shortcuts -s true
     # change panel clock format
     xfconf-query -c xfce4-panel -p /plugins/plugin-5/digital-format -s "%a %_d %b, %R"
     # terminal settings

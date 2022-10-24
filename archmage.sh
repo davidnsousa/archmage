@@ -182,15 +182,8 @@ constumize_xfce () {
         yay -S --noconfirm $PKG
     done
 
-    # XFCE SETTINGS
+    # SETTINGS
 
-    # keyboard shortcuts
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>d" -s "show_desktop_key"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>x" -s "rofi -show"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>f" -s "thunar"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>e" -s "xfce4-session-logout"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>t" -s "exo-open --launch TerminalEmulator"
     # panel settings
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
@@ -222,33 +215,31 @@ constumize_xfce () {
     xfconf-query -c xfce4-session -n -t 'bool' -p /general/SaveOnExit -s false 
     # no window cycle preview
     xfconf-query -c xfwm4 -p /general/cycle_preview -s false
-
-    # LIGHTDM SETTINGS
+    # lightdm settings
     sudo cp /usr/share/backgrounds/archlinux/small.png /usr/share/pixmaps
     sudo cp config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
-
-    # ROFI SETTINGS
-
+    # rofi settings
     mkdir ${HOME}/.config/rofi
     cp config/rofi/* ${HOME}/.config/rofi
-
-    # CONKY SETTINGS
-
+    # conky settings
     mkdir ${HOME}/.config/conky
     cp config/conky/* ${HOME}/.config/conky
-
-    # AUTOSTART
-
+    # autostart
     mkdir ${HOME}/.config/autostart
     cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
-
-    # FISH SETTINGS
-
+    # bash settings
     echo "exec fish" > ${HOME}/.bashrc
     # remove fish greeting
     fish -c "set -U fish_greeting"
-    # choose prompt
+    # choose fish prompt
     fish -c "fish_config prompt choose informative; fish_config prompt save"
+    # keyboard shortcuts
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>x" -s "rofi -show"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>f" -s "thunar"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>e" -s "xfce4-session-logout"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>t" -s "exo-open --launch TerminalEmulator"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>d" -s "show_desktop_key"    
 
     menu 4
 }

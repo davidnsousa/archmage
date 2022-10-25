@@ -96,7 +96,8 @@ COSMETICS=(
     ttf-opensans
     breeze-blue-cursor-theme
     breeze-snow-cursor-theme
-    breeze-obsidian-cursor-theme     
+    breeze-obsidian-cursor-theme
+    volumeicon 
 )
 
 # FUNC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -190,9 +191,8 @@ constumize_xfce () {
     # panel settings
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
-    # add pulseaudio to panel
-    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-6 -s pulseaudio
-    xfconf-query -c xfce4-panel -n -t 'bool' -p /plugins/plugin-6/enable-keyboard-shortcuts -s true
+    # volumeicon
+    volumeicon &
     # add power-manager to panel
     xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s true
     # change panel clock format

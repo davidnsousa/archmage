@@ -12,13 +12,15 @@ PKGS=(
     # GENERAL UTILITIES
 
     catfish "File search tool" OFF \
-    bitwarden "Password manager" OFF \
+    bitwarden "Cloud password manager" OFF \
+    keepass "Password manager" OFF \
     gigolo "(AUR) Access remote filesystems" OFF \
     baobab "Disk usage analyzer" OFF \
 
     # DEVELOPMENT
 
     base-devel "Development packages" OFF \
+    emacs "Text editor" OFF \
     geany "Text editor" OFF \
     git "Version control" OFF \
     octave "Scientific Programming Language" OFF \
@@ -187,11 +189,11 @@ constumize_xfce () {
     # panel settings
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
-    # add power-manager to panel
-    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-6 -s power-manager-plugin
     # add pulseaudio to panel
-    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-7 -s pulseaudio
-    xfconf-query -c xfce4-panel -n -t 'bool' -p /plugins/plugin-7/enable-keyboard-shortcuts -s true
+    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-6 -s pulseaudio
+    xfconf-query -c xfce4-panel -n -t 'bool' -p /plugins/plugin-6/enable-keyboard-shortcuts -s true
+        # add power-manager to panel
+    xfconf-query -c xfce4-panel -n -t 'string' -p /plugins/plugin-7 -s power-manager-plugin
     # change panel clock format
     xfconf-query -c xfce4-panel -p /plugins/plugin-5/digital-format -s "%a %_d %b, %R"
     # terminal settings

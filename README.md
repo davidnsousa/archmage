@@ -1,10 +1,10 @@
 # Archmage - Arch Linux Post Installation Setup
 
-Archmage is a simple post-install bash script to choose easily from a variety of packages for development, productivity, communication, etc, from both the official Arch repositeries and AUR using the Pacman wrapper and AUR helper yay. 
+Post-install bash script for Arch Linux + Xfce. 
 
-I wrote the script according to my software needs and XFCE (and other) preferences (theming, keyboard shortcuts, utilities, etc) to help me replicate or reset my Arch system whenever I need. 
+Archmage installs the Pacman wrapper and AUR helper yay, updates the system, installs selected packages from the official Arch repositeries and AUR, and costumizes the desktop environment.
 
-Read it and fork it according to your needs.
+Archmage was written according to my software needs and DE preferences to replicate or reset my Arch system whenever I need. Feel free to read it and fork it according to your own needs.
 
 ### Usage
 

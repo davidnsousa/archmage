@@ -1,7 +1,7 @@
 configuration {
 	modi: "drun,run,window,ssh";
 	kb-cancel: "Escape,Control+g,Control+bracketleft,Alt+F1";
- 	show-icons: true;
+ 	show-icons: false;
 /*	font: "mono 12";*/
 /*	icon-theme: ;*/
 /*	location: 0;*/

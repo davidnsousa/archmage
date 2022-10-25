@@ -31,6 +31,7 @@ PKGS=(
     # WEB TOOLS
 
     chromium "Open-source web browser" OFF \
+    google-chrome "(AUR) Google chrome browser" OFF \
     firefox "Mozilla web browser" OFF \
     librewolf-bin "(AUR) Customized Firefox" OFF \
     thunderbird "Mozilla e-mail client" OFF \

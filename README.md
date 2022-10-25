@@ -15,4 +15,4 @@ sh archmage.sh
 ```
 ![https://imgur.com/8gGyNmg.png](https://imgur.com/8gGyNmg.png)
 ![https://imgur.com/91nqUwm.png](https://imgur.com/91nqUwm.png)
-![https://imgur.com/DeezHAh.png](https://imgur.com/DeezHAh.png)
+![https://imgur.com/ksXhv7V.png](https://imgur.com/ksXhv7V.png)

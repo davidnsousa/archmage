@@ -191,8 +191,8 @@ constumize_xfce () {
     # panel settings
     xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/Redmond.tar.bz2
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
-    # volumeicon
-    volumeicon &
+    # autostart volumeicon
+    cp /usr/share/applications/volumeicon.desktop ${HOME}/.config/autostart
     # add power-manager to panel
     xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s true
     # change panel clock format
@@ -230,7 +230,7 @@ constumize_xfce () {
     # conky settings
     mkdir ${HOME}/.config/conky
     cp config/conky/* ${HOME}/.config/conky
-    # autostart
+    # autostart conky
     mkdir ${HOME}/.config/autostart
     cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
     # bash settings

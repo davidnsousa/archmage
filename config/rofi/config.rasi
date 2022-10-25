@@ -309,8 +309,10 @@ entry {
     text-color:        var(normal-foreground);
     cursor:            text;
     spacing:           0;
+    placeholder: "";
 }
 prompt {
+    enabled: false;
     spacing:    0;
     text-color: var(normal-foreground);
 }

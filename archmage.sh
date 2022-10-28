@@ -90,13 +90,11 @@ COSMETICS=(
     conky
     rofi
     arc-solid-gtk-theme
+    arc-icon-theme
     archlinux-wallpaper
     xfce4-panel-profiles
-    tela-icon-theme
     ttf-opensans
     breeze-blue-cursor-theme
-    breeze-snow-cursor-theme
-    breeze-obsidian-cursor-theme
     volumeicon 
 )
 
@@ -180,6 +178,9 @@ install_packages () {
 
 constumize_xfce () {
 
+    # REMOVE unwanted packages
+    yay -R --noconfirm xfburn xfce4-artwork parole 
+
     # INSTALL cosmetic packages
 
     for PKG in ${COSMETICS[@]}; do
@@ -193,6 +194,7 @@ constumize_xfce () {
     xfconf-query -c xfce4-panel -p /plugins/plugin-1/button-icon -s archlinux-logo
     # autostart volumeicon
     cp /usr/share/applications/volumeicon.desktop ${HOME}/.config/autostart
+    volumeicon &
     # add power-manager to panel
     xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s true
     # change panel clock format
@@ -210,7 +212,7 @@ constumize_xfce () {
     # set window manager theme
     xfconf-query -c xfwm4 -p /general/theme -s Arc-Dark-solid
     # set icon theme
-    xfconf-query -c xsettings -p /Net/IconThemeName -s Tela
+    xfconf-query -c xsettings -p /Net/IconThemeName -s Arc
     # set cursor theme
     xfconf-query -c xsettings -p /Gtk/CursorThemeName -s Breeze_Blue
     # set wallpaper
@@ -240,13 +242,14 @@ constumize_xfce () {
     # choose fish prompt
     fish -c "fish_config prompt choose informative; fish_config prompt save"
     # keyboard shortcuts
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>x" -s "rofi -show"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>f" -s "thunar"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>e" -s "xfce4-session-logout"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/commands/custom/<Super>t" -s "exo-open --launch TerminalEmulator"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>q" -s "close_window_key"
-    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p  "/xfwm4/custom/<Super>d" -s "show_desktop_key"    
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>a" -s "pavucontrol"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>x" -s "rofi -show"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>f" -s "thunar"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<super>e" -s "bash -c 'sh ~/.config/rofi/exit_menu.sh'"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>t" -s "exo-open --launch TerminalEmulator"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/xfwm4/custom/<Super>q" -s "close_window_key"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/xfwm4/custom/<Super>d" -s "show_desktop_key"    
 
     menu 4
 }

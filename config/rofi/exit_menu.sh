@@ -10,9 +10,9 @@ options="$option1\n$option2\n$option3\n$option4"
 chosen="$(echo -e "$options" | rofi -dmenu -config ~/.config/rofi/config_exit_menu.rasi)"
 case $chosen in
 	$option1)
-		xfce4-session-logout --logout;;
+		xfce4-session-logout -f -l;;
 	$option2)
-		xfce4-session-logout --suspend;;
+		xfce4-session-logout -s;;
 	$option3)
 		reboot;;
 	$option4)

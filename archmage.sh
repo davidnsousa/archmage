@@ -246,6 +246,7 @@ constumize_xfce () {
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>x" -s "rofi -show"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>z" -s "rofi -show filebrowser"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>f" -s "thunar"
+    xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<super>s" -s "bash -c 'sh ~/.config/rofi/search_home.sh'"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<super>e" -s "bash -c 'sh ~/.config/rofi/exit_menu.sh'"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>w" -s "exo-open --launch WebBrowser"
     xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p "/commands/custom/<Super>t" -s "exo-open --launch TerminalEmulator"

@@ -236,8 +236,8 @@ element-icon {
     text-color:       inherit;
 }
 window {
-    width:            30%;
-    height:           25%;
+    width:            100%;
+    location: north;
     padding:          5;
     background-color: var(background);
     border:           0;
@@ -255,11 +255,13 @@ textbox {
     text-color: var(foreground);
 }
 listview {
+    dynamic: true;
+    require-input: true;
     padding:      10px 4px 4px ;
-    scrollbar:    false;
+    scrollbar:    true;
     border-color: #191E28;
     spacing:      5px ;
-    fixed-height: 0;
+    fixed-height: false;
     border:       2px 0px 0px ;
 }
 scrollbar {

@@ -237,7 +237,7 @@ element-icon {
 }
 window {
     width:            130px;
-    height:           130px;
+    height:           150px;
     padding:          5;
     background-color: var(background);
     border:           0;

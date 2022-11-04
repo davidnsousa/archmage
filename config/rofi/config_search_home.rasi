@@ -3,7 +3,7 @@ configuration {
 	kb-cancel: "Escape,Control+g,Control+bracketleft,Alt+F1";
  	show-icons: false;
 /*	font: "mono 12";*/
-	icon-theme: "Arc";
+/*	icon-theme: ;*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
@@ -256,7 +256,7 @@ textbox {
 }
 listview {
     dynamic: true;
-    require-input: false;
+    require-input: true;
     padding:      10px 4px 4px ;
     scrollbar:    true;
     border-color: #191E28;

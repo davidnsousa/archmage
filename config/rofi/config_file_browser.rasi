@@ -255,6 +255,7 @@ textbox {
     text-color: var(foreground);
 }
 listview {
+columns: 2;
     dynamic: true;
     require-input: false;
     padding:      10px 4px 4px ;

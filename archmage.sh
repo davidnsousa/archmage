@@ -93,7 +93,7 @@ menu () {
     2 "Update system" \
     3 "Install software" \
     4 "Setup DE" \
-    5 "Automatic setup" 3>&1 1>&2 2>&3)
+    5 "All" 3>&1 1>&2 2>&3)
 
     if [ -z $CHOICES ]; then
     echo "Ok"
@@ -164,9 +164,7 @@ install_packages () {
 # DESKTOP ENVIRONMENT SETUP
 
 setup_DE () {
-
     sh setupDE.sh
-
     menu 4
 }
 

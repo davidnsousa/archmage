@@ -14,8 +14,9 @@ menu () {
     1 "Install yay (if not installed)" \
     2 "Update system" \
     3 "Install software" \
-    4 "Setup DE" \
-    5 "All" 3>&1 1>&2 2>&3)
+    4 "Remove software" \
+    5 "Setup DE" \
+    6 "All" 3>&1 1>&2 2>&3)
 
     if [ -z $CHOICES ]; then
     echo "Ok"
@@ -32,19 +33,23 @@ menu () {
         install_packages
         ;;
         4)
-        setup_DE
+        remove_packages
         ;;
         5)
+        setup_DE
+        ;;
+        6)
         AUTOMATIC=true
         install_yay
         update_system 
         install_packages
+        remove_packages
         setup_DE
         if whiptail --yesno "Finished! Do you wish to reboot now?" 10 50; then
             reboot
             else
             AUTOMATIC=false
-            menu 5
+            menu 6
         fi
         ;;
         esac
@@ -76,18 +81,27 @@ update_system () {
 # INSTALL PACKAGES
 
 install_packages () {
-    SELECTION=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
-    for PKG in ${SELECTION[@]}; do
+    SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
+    for PKG in ${SELECTION_INSTALL[@]}; do
         yay -S --noconfirm $PKG
     done
     if ! $AUTOMATIC; then menu 4; fi
+}
+
+remove_packages () {
+    SELECTION_REMOVE=$(pacman -Qe | awk '{print $1}')
+    SR=()
+    for PKG in ${SELECTION_REMOVE[@]}; do
+        yay -R --noconfirm $PKG
+    done
+    if ! $AUTOMATIC; then menu 5; fi
 }
 
 # DESKTOP ENVIRONMENT SETUP
 
 setup_DE () {
     sh setupDE.sh
-    menu 4
+    menu 5
 }
 
 # RUN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -96,7 +110,7 @@ ARCHMAGEDIR=$(pwd)
 
 AUTOMATIC=false
 
-menu 5
+menu 6
 
 echo
 echo "Done! Reboot if necessary."

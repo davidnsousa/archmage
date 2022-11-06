@@ -1,44 +1,44 @@
-gnome-keyring,Gnome pass storage,OFF
-neofetch,System information tool,OFF
-catfish,File search tool,OFF
-bitwarden,Cloud password manager,OFF
-keepass,Password manager,OFF
-gigolo,(AUR) Access remote filesystems,OFF
-baobab,Disk usage analyzer,OFF
-base-devel,Development packages,OFF
-emacs,Text editor,OFF
-geany,Text editor,OFF
-git,Version control,OFF
-octave,Scientific Programming Language,OFF
-vscodium-bin,(AUR) VSCode like IDE,OFF
-rstudio-desktop-bin,(AUR) IDE for R,OFF
-arduino-ide-bin,(AUR) Arduino IDE,OFF
-chromium,Open-source web browser,OFF
-google-chrome,(AUR) Google chrome browser,OFF
-firefox,Mozilla web browser,OFF
-librewolf-bin,(AUR) Customized Firefox,OFF
-thunderbird,Mozilla e-mail client,OFF
-transmission-gtk,BitTorrent client,OFF
-megasync-bin,(AUR) MEGA Desktop App,OFF
-thunar-megasync-bin,(AUR) MEGA thunar utility,OFF
-zoom,(AUR) Video Communications,OFF
-telegram-desktop-bin,(AUR) Messaging service,OFF
-slack-desktop,(AUR) Messaging for office,OFF
-signal-desktop-beta-bin,(AUR) Secure messaging service,OFF
-vlc,Media player,OFF
-lmms,Linux multi-media studio,OFF
-gcolor2,Gnome color picker,OFF
-gimp,Image editor,OFF
-inkscape,Vector image editor,OFF
-galculator,Gnome calculator,OFF
-mousepad,Text editor,OFF
-xpdf,PDF reader for X,OFF
-atril,PDF reader,OFF
-onlyoffice-bin,(AUR) Office suite,OFF
-zotero-bin,(AUR) Reference manager,OFF
-virtualbox,Virtualization,OFF
-virtualbox-host-modules-arch,Virtualbox linux kernel modules,OFF
-virtualbox-host-modules-dkms,Virtualbox other kernels modules,OFF
-mullvad-vpn-bin,(AUR) Mullvad VPN service,OFF
-protonmail-bridge-bin,(AUR) Protonmail bidge,OFF
-stellarium-bin,(AUR) Astronomy software,OFF 
+gnome-keyring
+neofetch
+catfish
+bitwarden
+keepass
+gigolo
+baobab
+base-devel
+emacs
+geany
+git
+octave
+vscodium-bin
+rstudio-desktop-bin
+arduino-ide-bin
+chromium
+google-chrome
+firefox
+librewolf-bin
+thunderbird
+transmission-gtk
+megasync-bin
+thunar-megasync-bin
+zoom
+telegram-desktop-bin
+slack-desktop
+signal-desktop-beta-bin
+vlc
+lmms
+gcolor2
+gimp
+inkscape
+galculator
+mousepad
+xpdf
+atril
+onlyoffice-bin
+zotero-bin
+virtualbox
+virtualbox-host-modules-arch
+virtualbox-host-modules-dkms
+mullvad-vpn-bin
+protonmail-bridge-bin
+stellarium-bin

@@ -3,8 +3,8 @@
 # PKGS
 
 PKGS=()
-while IFS=, read -r pkg desc tag; do
-  PKGS+=("$pkg" "$desc" "$tag")
+while read -r pkg; do
+  PKGS+=("$pkg" "")
 done < packages
 
 # FUNCTIONS
@@ -77,7 +77,7 @@ update_system () {
 }
 
 install_packages () {
-    SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
+    SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist --noitem "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTION_INSTALL[@]}; do
         yay -S --noconfirm $PKG
     done
@@ -90,7 +90,7 @@ remove_packages () {
     for PKG in ${INSTALLED_PACKAGES[@]}; do
         IP+=("$PKG" "" "")
     done
-    SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${IP[@]}" 3>&1 1>&2 2>&3) )
+    SELECTION_INSTALL=( $(whiptail --title "Remove software" --separate-output --checklist "Select packages:" 24 80 14 "${IP[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTION_INSTALL[@]}; do
         yay -R --noconfirm $PKG
     done

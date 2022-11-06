@@ -2,88 +2,10 @@
 
 # PKGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-PKGS=(
-
-    # TERMINAL UTILITIES
-
-    gnome-keyring "Gnome pass storage" OFF \
-    neofetch "System information tool" OFF \
-
-    # GENERAL UTILITIES
-
-    catfish "File search tool" OFF \
-    bitwarden "Cloud password manager" OFF \
-    keepass "Password manager" OFF \
-    gigolo "(AUR) Access remote filesystems" OFF \
-    baobab "Disk usage analyzer" OFF \
-
-    # DEVELOPMENT
-
-    base-devel "Development packages" OFF \
-    emacs "Text editor" OFF \
-    geany "Text editor" OFF \
-    git "Version control" OFF \
-    octave "Scientific Programming Language" OFF \
-    vscodium-bin "(AUR) VSCode like IDE" OFF \
-    rstudio-desktop-bin "(AUR) IDE for R" OFF \
-    arduino-ide-bin "(AUR) Arduino IDE" OFF \
-
-    # WEB TOOLS
-
-    chromium "Open-source web browser" OFF \
-    google-chrome "(AUR) Google chrome browser" OFF \
-    firefox "Mozilla web browser" OFF \
-    librewolf-bin "(AUR) Customized Firefox" OFF \
-    thunderbird "Mozilla e-mail client" OFF \
-    transmission-gtk "BitTorrent client" OFF \
-
-    # CLOUD UTILITIES
-
-    megasync-bin "(AUR) MEGA Desktop App" OFF \
-    thunar-megasync-bin "(AUR) MEGA thunar utility" OFF \
-
-    # COMMUNICATIONS
-
-    zoom "(AUR) Video Communications" OFF \
-    telegram-desktop-bin "(AUR) Messaging service" OFF \
-    slack-desktop "(AUR) Messaging for office" OFF \
-    signal-desktop-beta-bin "(AUR) Secure messaging service" OFF \
-
-    # MEDIA
-
-    vlc "Media player" OFF \
-    lmms "Linux multi-media studio" OFF \
-
-    # GRAPHICS AND DESIGN
-
-    gcolor2 "Gnome color picker" OFF \
-    gimp "Image editor" OFF \
-    inkscape "Vector image editor" OFF \
-
-    # PRODUCTIVITY
-
-    galculator "Gnome calculator" OFF \
-    mousepad "Text editor" OFF \
-    xpdf "PDF reader for X" OFF \
-    atril "PDF reader" OFF \
-    onlyoffice-bin "(AUR) Office suite" OFF \
-    zotero-bin "(AUR) Reference manager" OFF \
-
-    # VIRTUALIZATION
-
-    virtualbox "Virtualization" OFF \
-    virtualbox-host-modules-arch "Virtualbox linux kernel modules" OFF \
-    virtualbox-host-modules-dkms "Virtualbox other kernels modules" OFF \
-
-    # PRIVACY AND SECURITY TOOLS
-
-    mullvad-vpn-bin "(AUR) Mullvad VPN service" OFF \
-    protonmail-bridge-bin "(AUR) Protonmail bidge" OFF \
-
-    # OTHER
-
-    stellarium-bin "(AUR) Astronomy software" OFF 
-)
+PKGS=()
+while IFS=, read -r pkg desc tag; do
+  PKGS+=("$pkg" "$desc" "$tag")
+done < packages
 
 # FUNC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 

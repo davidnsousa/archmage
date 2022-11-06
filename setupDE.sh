@@ -1,4 +1,4 @@
-COSMETICS=(
+PKGS=(
     fish
     conky
     rofi
@@ -11,12 +11,9 @@ COSMETICS=(
     volumeicon 
 )
 
-# REMOVE unwanted packages
-yay -R --noconfirm xfburn xfce4-artwork parole 
+# INSTALL packages
 
-# INSTALL cosmetic packages
-
-for PKG in ${COSMETICS[@]}; do
+for PKG in ${PKGS[@]}; do
     yay -S --noconfirm $PKG
 done
 

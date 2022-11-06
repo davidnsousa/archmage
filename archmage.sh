@@ -16,7 +16,7 @@ menu () {
     3 "Install software" \
     4 "Remove software" \
     5 "Setup DE" \
-    6 "All" 3>&1 1>&2 2>&3)
+    6 "Auto 1-5" 3>&1 1>&2 2>&3)
 
     if [ -z $CHOICES ]; then
     echo "Ok"

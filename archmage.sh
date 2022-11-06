@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# PKGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# PKGS
 
 PKGS=()
 while IFS=, read -r pkg desc tag; do
   PKGS+=("$pkg" "$desc" "$tag")
 done < packages
 
-# FUNC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# FUNCTIONS
 
 menu () {
     CHOICES=$(whiptail --title "Archmage" --menu "" --default-item "$1" 18 50 10 \
@@ -57,8 +57,6 @@ menu () {
     fi
 }
 
-# INSTALL YAY
-
 install_yay () {
     if yay --version; then 
         echo "yay is already installed!"
@@ -78,8 +76,6 @@ update_system () {
     if ! $AUTOMATIC; then menu 3; fi
 }
 
-# INSTALL PACKAGES
-
 install_packages () {
     SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTION_INSTALL[@]}; do
@@ -89,22 +85,24 @@ install_packages () {
 }
 
 remove_packages () {
-    SELECTION_REMOVE=$(pacman -Qe | awk '{print $1}')
-    SR=()
-    for PKG in ${SELECTION_REMOVE[@]}; do
+    INSTALLED_PACKAGES=$(pacman -Qe | awk '{print $1}')
+    IP=()
+    for PKG in ${INSTALLED_PACKAGES[@]}; do
+        IP+=("$PKG" "" "")
+    done
+    SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist "Select packages:" 24 80 14 "${IP[@]}" 3>&1 1>&2 2>&3) )
+    for PKG in ${SELECTION_INSTALL[@]}; do
         yay -R --noconfirm $PKG
     done
     if ! $AUTOMATIC; then menu 5; fi
 }
-
-# DESKTOP ENVIRONMENT SETUP
 
 setup_DE () {
     sh setupDE.sh
     menu 5
 }
 
-# RUN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# RUN
 
 ARCHMAGEDIR=$(pwd)
 

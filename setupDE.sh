@@ -29,6 +29,8 @@ volumeicon &
 xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/show-tray-icon -s true
 # change panel clock format
 xfconf-query -c xfce4-panel -p /plugins/plugin-5/digital-format -s "%a %_d %b, %R"
+# no icons in pabel menu
+xfconf-query -c xfce4-panel -p /plugins/plugin-1/show-menu-icons -s false
 # terminal settings
 mkdir ${HOME}/.config/xfce4/terminal
 cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
@@ -63,6 +65,7 @@ cp config/rofi/* ${HOME}/.config/rofi
 mkdir ${HOME}/.config/conky
 cp config/conky/* ${HOME}/.config/conky
 # autostart conky
+rm ${HOME}/.config/autostart
 mkdir ${HOME}/.config/autostart
 cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
 # bash settings

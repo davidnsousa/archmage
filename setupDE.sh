@@ -1,4 +1,9 @@
 PKGS=(
+    xorg-server
+    lightdm
+    lightdm-gtk-greeter
+    xfce4
+    xfce4-goodies
     fish
     conky
     rofi
@@ -16,6 +21,8 @@ PKGS=(
 for PKG in ${PKGS[@]}; do
     yay -S --noconfirm $PKG
 done
+
+sudo systemctl enable lightdm.serivce
 
 # SETTINGS
 

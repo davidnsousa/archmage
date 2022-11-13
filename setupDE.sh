@@ -19,7 +19,7 @@ PKGS=(
 # INSTALL packages
 
 for PKG in ${PKGS[@]}; do
-    yay -S --noconfirm $PKG
+    yay -S --needed --noconfirm $PKG
 done
 
 sudo systemctl enable lightdm.service

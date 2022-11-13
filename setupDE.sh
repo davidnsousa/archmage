@@ -30,6 +30,9 @@ sudo systemctl enable lightdm.service
 # SETTINGS
 
 # lightdm settings
+echo
+echo "Costumize lightdm:"
+echo
 sudo cp /usr/share/backgrounds/archlinux/small.png /usr/share/pixmaps
 sudo cp config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 # xfce settings

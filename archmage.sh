@@ -106,6 +106,9 @@ setup_DE () {
 
 ARCHMAGEDIR=$(pwd)
 
+# install libnewt for whiptail if not installed
+sudo pacman -S --needed libnewt
+
 AUTOMATIC=false
 
 menu 6

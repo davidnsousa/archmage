@@ -22,7 +22,7 @@ for PKG in ${PKGS[@]}; do
     yay -S --noconfirm $PKG
 done
 
-sudo systemctl enable lightdm.serivce
+sudo systemctl enable lightdm.service
 
 # SETTINGS
 

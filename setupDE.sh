@@ -13,6 +13,7 @@ PKGS=(
     xfce4-panel-profiles
     ttf-opensans
     breeze-blue-cursor-theme
+    pavucontrol
     volumeicon 
 )
 

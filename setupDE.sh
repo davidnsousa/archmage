@@ -36,7 +36,7 @@ echo
 sudo cp /usr/share/backgrounds/archlinux/small.png /usr/share/pixmaps
 sudo cp config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 # xfce settings
-cp cp config/xfce4/xfconf/xfce-perchannel-xml ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
+cp config/xfce4/xfconf/xfce-perchannel-xml ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
 # autostart volumeicon
 cp /usr/share/applications/volumeicon.desktop ${HOME}/.config/autostart
 # terminal settings

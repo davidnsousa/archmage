@@ -11,7 +11,6 @@ PKGS=(
     arc-solid-gtk-theme
     arc-icon-theme
     archlinux-wallpaper
-    xfce4-panel-profiles
     ttf-opensans
     breeze-blue-cursor-theme
     pavucontrol

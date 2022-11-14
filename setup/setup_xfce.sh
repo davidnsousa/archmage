@@ -15,7 +15,6 @@ PKGS=(
     rofi
     arc-solid-gtk-theme
     arc-icon-theme
-    archlinux-wallpaper
     ttf-opensans
     breeze-blue-cursor-theme 
 )
@@ -40,6 +39,13 @@ echo "Costumize lightdm:"
 echo
 sudo cp /usr/share/backgrounds/archlinux/small.png /usr/share/pixmaps
 sudo cp config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
+# copy archmage artwork
+echo
+echo "Copy archmage artwork:"
+echo
+sudo mkdir /usr/share/backgrounds/archmage
+cp imgs/backgrounds/* /usr/share/backgrounds/archmage
+cp imgs/logo/archmage-logo.png /usr/share/pixmaps/
 # xfce settings
 cp config/xfce4/xfconf/xfce-perchannel-xml/* ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
 # autostart volumeicon

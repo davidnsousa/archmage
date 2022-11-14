@@ -31,7 +31,7 @@
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="applicationsmenu">
-      <property name="button-icon" type="string" value="archlinux-logo"/>
+      <property name="button-icon" type="string" value="archmage-logo"/>
       <property name="button-title" type="string" value="Start"/>
       <property name="custom-menu" type="bool" value="false"/>
       <property name="show-button-title" type="bool" value="true"/>

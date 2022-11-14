@@ -17,11 +17,13 @@ mousepad
 xpdf
 atril
 pdftk
+xournalapp
 git
 octave
 vscodium-bin
 rstudio-desktop-bin
 arduino-ide-bin
+pycharm-community-edition
 chromium
 google-chrome
 firefox
@@ -41,8 +43,10 @@ gcolor2
 gimp
 inkscape
 galculator
+libreoffice-fresh
 onlyoffice-bin
 zotero-bin
+timeshift
 virtualbox
 virtualbox-host-modules-arch
 virtualbox-host-modules-dkms

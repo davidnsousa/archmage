@@ -10,10 +10,10 @@ done < setup/packages
 # FUNCTIONS
 
 menu () {
-    CHOICES=$(whiptail --cancel-button "Leave" --title "Archmage" --menu "" --default-item "$1" 18 50 10 \
+    CHOICES=$(whiptail --ok-button "Run" --cancel-button "Leave" --title "Archmage" --menu "\n" --default-item "$1" 18 50 10 \
     1 "Install yay (if not installed)" \
     2 "Update system" \
-    3 "Setup DE" \
+    3 "Setup desktop environment" \
     4 "Install software" \
     5 "Remove software" \
     6 "Automatic setup" \

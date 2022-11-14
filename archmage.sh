@@ -5,7 +5,7 @@
 PKGS=()
 while read -r pkg; do
   PKGS+=("$pkg" "")
-done < packages
+done < setup/packages
 
 # FUNCTIONS
 
@@ -77,7 +77,20 @@ update_system () {
 }
 
 setup_DE () {
-    sh setupDE.sh
+    CHOICES=$(whiptail --title "Desktop environment" --menu "" --default-item "$1" 18 50 10 \
+    1 "Xfce" 3>&1 1>&2 2>&3)
+
+    if [ -z $CHOICES ]; then
+    echo "Ok"
+    else
+    for CHOICE in $CHOICES; do
+        case "$CHOICE" in
+        1)
+        sh setup/setup_xfce.sh
+        ;;
+        esac
+    done
+    fi
     menu 4
 }
 

@@ -1,5 +1,6 @@
 wget
 gnome-keyring
+htop
 neofetch
 xarchiver
 catfish

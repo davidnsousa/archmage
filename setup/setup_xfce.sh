@@ -9,6 +9,7 @@ PKGS=(
     pavucontrol
     volumeicon
     network-manager-applet
+    htop
     fish
     conky
     rofi

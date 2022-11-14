@@ -97,7 +97,7 @@ setup_DE () {
 install_packages () {
     SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist --noitem "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTION_INSTALL[@]}; do
-        yay -S --noconfirm $PKG
+        yay -S --needed --noconfirm $PKG
     done
     if ! $AUTOMATIC; then menu 5; fi
 }

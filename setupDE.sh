@@ -5,6 +5,10 @@ PKGS=(
     xfce4
     xfce4-goodies
     xdg-utils
+    gvfs
+    pavucontrol
+    volumeicon
+    network-manager-applet
     fish
     conky
     rofi
@@ -12,9 +16,7 @@ PKGS=(
     arc-icon-theme
     archlinux-wallpaper
     ttf-opensans
-    breeze-blue-cursor-theme
-    pavucontrol
-    volumeicon 
+    breeze-blue-cursor-theme 
 )
 
 # INSTALL packages
@@ -24,9 +26,10 @@ for PKG in ${PKGS[@]}; do
 done
 
 echo
-echo "Enable lightdm service:"
+echo "Enable services:"
 echo
 sudo systemctl enable lightdm.service
+sudo systemctl enable NetworkManager.service
 
 # SETTINGS
 

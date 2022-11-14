@@ -108,9 +108,9 @@ ARCHMAGEDIR=$(pwd)
 
 # install libnewt for whiptail if not installed
 sudo pacman -S --needed libnewt
-
+# run automatically
 AUTOMATIC=false
-
+# archmage menu
 menu 6
 
 echo

@@ -50,7 +50,7 @@ menu () {
             reboot
             else
             AUTOMATIC=false
-            menu 6
+            menu 7
         fi
         ;;
         7)
@@ -120,7 +120,7 @@ remove_packages () {
     for PKG in ${SELECTION_INSTALL[@]}; do
         yay -R --noconfirm $PKG
     done
-    if ! $AUTOMATIC; then menu 5; fi
+    if ! $AUTOMATIC; then menu 7; fi
 }
 
 # RUN

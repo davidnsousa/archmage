@@ -46,25 +46,10 @@ echo
 sudo mkdir /usr/share/backgrounds/archmage
 sudo cp imgs/backgrounds/* /usr/share/backgrounds/archmage
 sudo cp imgs/logo/archmage-logo.png /usr/share/pixmaps/
-# xfce settings
-cp config/xfce4/xfconf/xfce-perchannel-xml/* ${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml
-# autostart volumeicon
+# copy configuration files
+cp -r config/config_xfce/* ${HOME}/.config
+# autostart apps
 cp /usr/share/applications/volumeicon.desktop ${HOME}/.config/autostart
-# terminal settings
-mkdir ${HOME}/.config/xfce4/terminal
-cp config/xfce4/terminal/* ${HOME}/.config/xfce4/terminal
-# applicationsmenu settings
-mkdir ${HOME}/.config/menus
-cp config/menus/* ${HOME}/.config/menus
-# rofi settings
-mkdir ${HOME}/.config/rofi
-cp config/rofi/* ${HOME}/.config/rofi
-# conky settings
-mkdir ${HOME}/.config/conky
-cp config/conky/* ${HOME}/.config/conky
-# autostart conky
-rm ${HOME}/.config/autostart
-mkdir ${HOME}/.config/autostart
 cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
 # bash settings
 echo "exec fish" > ${HOME}/.bashrc

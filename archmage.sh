@@ -13,10 +13,10 @@ menu () {
     CHOICES=$(whiptail --title "Archmage" --menu "" --default-item "$1" 18 50 10 \
     1 "Install yay (if not installed)" \
     2 "Update system" \
-    3 "Install software" \
-    4 "Remove software" \
-    5 "Setup DE" \
-    6 "Auto 1-5" 3>&1 1>&2 2>&3)
+    3 "Setup DE" \
+    4 "Install software" \
+    5 "Remove software" \
+    6 "Automatic setup" 3>&1 1>&2 2>&3)
 
     if [ -z $CHOICES ]; then
     echo "Ok"
@@ -30,21 +30,21 @@ menu () {
         update_system
         ;;
         3)
-        install_packages
+        setup_DE
         ;;
         4)
-        remove_packages
+        install_packages
         ;;
         5)
-        setup_DE
+        remove_packages        
         ;;
         6)
         AUTOMATIC=true
         install_yay
+        setup_DE
         update_system 
         install_packages
         remove_packages
-        setup_DE
         if whiptail --yesno "Finished! Do you wish to reboot now?" 10 50; then
             reboot
             else
@@ -76,12 +76,17 @@ update_system () {
     if ! $AUTOMATIC; then menu 3; fi
 }
 
+setup_DE () {
+    sh setupDE.sh
+    menu 4
+}
+
 install_packages () {
     SELECTION_INSTALL=( $(whiptail --title "Install software" --separate-output --checklist --noitem "Select packages:" 24 80 14 "${PKGS[@]}" 3>&1 1>&2 2>&3) )
     for PKG in ${SELECTION_INSTALL[@]}; do
         yay -S --noconfirm $PKG
     done
-    if ! $AUTOMATIC; then menu 4; fi
+    if ! $AUTOMATIC; then menu 5; fi
 }
 
 remove_packages () {
@@ -97,22 +102,15 @@ remove_packages () {
     if ! $AUTOMATIC; then menu 5; fi
 }
 
-setup_DE () {
-    sh setupDE.sh
-    menu 5
-}
-
 # RUN
 
 ARCHMAGEDIR=$(pwd)
-
 # install libnewt for whiptail if not installed
 sudo pacman -S --needed libnewt
 # run automatically
 AUTOMATIC=false
 # archmage menu
 menu 6
-
 echo
 echo "Done! Reboot if necessary."
 echo

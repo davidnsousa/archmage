@@ -10,13 +10,14 @@ done < setup/packages
 # FUNCTIONS
 
 menu () {
-    CHOICES=$(whiptail --title "Archmage" --menu "" --default-item "$1" 18 50 10 \
+    CHOICES=$(whiptail --cancel-button "Leave" --title "Archmage" --menu "" --default-item "$1" 18 50 10 \
     1 "Install yay (if not installed)" \
     2 "Update system" \
     3 "Setup DE" \
     4 "Install software" \
     5 "Remove software" \
-    6 "Automatic setup" 3>&1 1>&2 2>&3)
+    6 "Automatic setup" \
+    7 "Reboot" 3>&1 1>&2 2>&3)
 
     if [ -z $CHOICES ]; then
     echo "Ok"
@@ -51,6 +52,9 @@ menu () {
             AUTOMATIC=false
             menu 6
         fi
+        ;;
+        7)
+        reboot
         ;;
         esac
     done
@@ -91,6 +95,10 @@ setup_DE () {
         esac
     done
     fi
+    echo
+    echo "Change hostname to archmage:"
+    echo
+    sudo hostnamectl set-hostname Archmage 
     menu 4
 }
 
@@ -117,6 +125,7 @@ remove_packages () {
 
 # RUN
 
+# working dir
 ARCHMAGEDIR=$(pwd)
 # install libnewt for whiptail if not installed
 sudo pacman -S --needed libnewt
@@ -124,6 +133,3 @@ sudo pacman -S --needed libnewt
 AUTOMATIC=false
 # archmage menu
 menu 6
-echo
-echo "Done! Reboot if necessary."
-echo

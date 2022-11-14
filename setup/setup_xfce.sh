@@ -37,7 +37,6 @@ sudo systemctl enable NetworkManager.service
 echo
 echo "Costumize lightdm:"
 echo
-sudo cp imgs/backgrounds/archmage/archmage-light.png /usr/share/pixmaps
 sudo cp config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 # copy archmage artwork
 echo
@@ -49,6 +48,7 @@ sudo cp imgs/logo/archmage-logo.png /usr/share/pixmaps/
 # copy configuration files
 cp -r config/config_xfce/* ${HOME}/.config
 # autostart apps
+mkdir ${HOME}/.config/autostart
 cp /usr/share/applications/volumeicon.desktop ${HOME}/.config/autostart
 cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
 # bash settings

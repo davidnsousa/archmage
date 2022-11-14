@@ -4,6 +4,7 @@ PKGS=(
     lightdm-gtk-greeter
     xfce4
     xfce4-goodies
+    xdg-utils
     fish
     conky
     rofi

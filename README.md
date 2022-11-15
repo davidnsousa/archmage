@@ -2,7 +2,9 @@
 
 Post-install bash script for Arch Linux.
 
-Archmage installs the Pacman wrapper and AUR helper yay, updates the system, installs selected packages from the official Arch repositeries and AUR, removes unwanted packages and sets up the desktop environment.
+Archmage installs the Pacman wrapper and AUR helper yay, updates the system, sets up the desktop environment, installs selected packages from the official Arch repositeries and AUR and removes unwanted packages.
+
+Requires an Arch Linux minimal installation.
 
 Archmage was written according to my software needs and DE preferences to replicate or reset my Arch system whenever I need. Feel free to read it and fork it according to your own needs.
 

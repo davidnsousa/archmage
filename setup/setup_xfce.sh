@@ -44,7 +44,7 @@ echo "Copy archmage artwork:"
 echo
 sudo mkdir /usr/share/backgrounds/archmage
 sudo cp imgs/backgrounds/* /usr/share/backgrounds/archmage
-sudo cp imgs/logo/archmage-logo.png /usr/share/pixmaps/
+sudo cp imgs/logo/* /usr/share/pixmaps/
 # copy configuration files
 cp -r config/config_xfce/* ${HOME}/.config
 # autostart apps

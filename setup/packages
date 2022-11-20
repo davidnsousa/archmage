@@ -46,10 +46,15 @@ galculator
 libreoffice-fresh
 onlyoffice-bin
 zotero-bin
+joplin-beta-appimage
 timeshift
 virtualbox
 virtualbox-host-modules-arch
 virtualbox-host-modules-dkms
 mullvad-vpn-bin
+protonvpn
+protonvpn-cli
 protonmail-bridge-bin
+protonmail-bridge-nogui
+protonmail-bridge-nokeychain
 stellarium-bin

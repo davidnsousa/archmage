@@ -21,9 +21,12 @@ xournalapp
 git
 octave
 vscodium-bin
+pulsar-bin
 rstudio-desktop-bin
 arduino-ide-bin
 pycharm-community-edition
+thonny
+fritzing
 chromium
 google-chrome
 firefox

@@ -32,7 +32,7 @@
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="applicationsmenu">
       <property name="button-icon" type="string" value="archmage-logo-small"/>
-      <property name="button-title" type="string" value="Start"/>
+      <property name="button-title" type="string" value=""/>
       <property name="custom-menu" type="bool" value="false"/>
       <property name="show-button-title" type="bool" value="true"/>
       <property name="show-generic-names" type="bool" value="false"/>

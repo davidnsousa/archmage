@@ -7,7 +7,6 @@ PKGS=(
     xdg-utils
     gvfs
     pavucontrol
-    volumeicon
     network-manager-applet
     htop
     fish
@@ -49,7 +48,6 @@ sudo cp imgs/logo/* /usr/share/pixmaps/
 cp -r config/config_xfce/* ${HOME}/.config
 # autostart apps
 mkdir ${HOME}/.config/autostart
-cp /usr/share/applications/volumeicon.desktop ${HOME}/.config/autostart
 cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
 # bash settings
 echo "exec fish" > ${HOME}/.bashrc

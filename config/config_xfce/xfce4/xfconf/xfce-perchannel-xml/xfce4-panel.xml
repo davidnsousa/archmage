@@ -58,7 +58,10 @@
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-4" type="string" value="systray">
+    <property name="plugin-4" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
+    <property name="plugin-5" type="string" value="systray">
       <property name="hide-new-items" type="bool" value="false"/>
       <property name="icon-size" type="int" value="22"/>
       <property name="menu-is-primary" type="bool" value="false"/>
@@ -74,14 +77,11 @@
       <property name="known-items" type="array"/>
       <property name="hidden-legacy-items" type="array"/>
     </property>
-    <property name="plugin-5" type="string" value="clock">
+    <property name="plugin-6" type="string" value="clock">
       <property name="digital-format" type="string" value="%a %_d %b, %R"/>
       <property name="mode" type="uint" value="2"/>
       <property name="show-frame" type="bool" value="true"/>
       <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
-    </property>
-    <property name="plugin-6" type="string" value="pulseaudio">
-      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
     </property>
   </property>
 </channel>

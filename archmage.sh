@@ -13,10 +13,10 @@ menu () {
     CHOICES=$(whiptail --ok-button "Run" --cancel-button "Leave" --title "Archmage" --menu "\n" --default-item "$1" 18 50 10 \
     1 "Install yay (if not installed)" \
     2 "Update system" \
-    3 "Setup desktop environment" \
+    3 "Setup DE (for current user)" \
     4 "Install software" \
     5 "Remove software" \
-    6 "Automatic setup" \
+    6 "Run all" \
     7 "Reboot" 3>&1 1>&2 2>&3)
 
     if [ -z $CHOICES ]; then

@@ -1,3 +1,5 @@
+xkill
+gparted
 wget
 gnome-keyring
 htop
@@ -51,6 +53,8 @@ onlyoffice-bin
 zotero-bin
 joplin-beta-appimage
 timeshift
+distrobox
+docker
 virtualbox
 virtualbox-host-modules-arch
 virtualbox-host-modules-dkms

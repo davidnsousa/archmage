@@ -6,6 +6,7 @@ PKGS=(
     xfce4-goodies
     xdg-utils
     gvfs
+    htop
     pavucontrol
     network-manager-applet
     conky

@@ -61,6 +61,8 @@
       <property name="&lt;Super&gt;a" type="string" value="pavucontrol"/>
       <property name="&lt;Super&gt;z" type="string" value="rofi -show filebrowser"/>
       <property name="&lt;super&gt;s" type="string" value="bash -c &apos;sh ~/.config/rofi/search_home.sh&apos;"/>
+      <property name="&lt;Super&gt;u" type="string" value="xfce4-terminal -e 'yay'"/>
+      <property name="&lt;Super&gt;m" type="string" value="xfce4-terminal -e 'htop'"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

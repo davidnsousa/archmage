@@ -8,8 +8,6 @@ PKGS=(
     gvfs
     pavucontrol
     network-manager-applet
-    htop
-    fish
     conky
     rofi
     arc-solid-gtk-theme
@@ -49,12 +47,3 @@ cp -r config/config_xfce/* ${HOME}/.config
 # autostart apps
 mkdir ${HOME}/.config/autostart
 cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
-# bash settings
-echo "exec fish" > ${HOME}/.bashrc
-# remove fish greeting
-fish -c "set -U fish_greeting"
-# choose fish prompt
-echo
-echo "Costumize fish prompt:"
-echo
-fish -c "fish_config prompt choose informative; fish_config prompt save"

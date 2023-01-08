@@ -63,6 +63,7 @@
       <property name="&lt;super&gt;s" type="string" value="bash -c &apos;sh ~/.config/rofi/search_home.sh&apos;"/>
       <property name="&lt;Super&gt;u" type="string" value="xfce4-terminal -e 'yay'"/>
       <property name="&lt;Super&gt;m" type="string" value="xfce4-terminal -e 'htop'"/>
+      <property name="&lt;Super&gt;b" type="string" value="xfce4-terminal -e 'bash'"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

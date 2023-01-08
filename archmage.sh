@@ -11,9 +11,9 @@ done < setup/packages
 
 menu () {
     CHOICES=$(whiptail --ok-button "Run" --cancel-button "Leave" --title "Archmage" --menu "\n" --default-item "$1" 18 50 10 \
-    1 "Install yay (if not installed)" \
+    1 "Install yay" \
     2 "Update system" \
-    3 "Setup DE (for current user)" \
+    3 "Setup DE" \
     4 "Install software" \
     5 "Remove software" \
     6 "Run all" \

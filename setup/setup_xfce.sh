@@ -49,8 +49,6 @@ cp -r config/config_xfce/* ${HOME}/.config
 # autostart apps
 mkdir ${HOME}/.config/autostart
 cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
-# bash settings
-echo "exec fish" > ${HOME}/.bashrc
 # remove fish greeting
 fish -c "set -U fish_greeting"
 # choose fish prompt

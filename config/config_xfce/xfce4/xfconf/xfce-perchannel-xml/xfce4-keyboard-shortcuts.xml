@@ -52,7 +52,7 @@
       <property name="HomePage" type="string" value="rofi -show drun -drun-categories WebBrowser"/>
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
-      <property name="&lt;Super&gt;t" type="string" value="exo-open --launch TerminalEmulator"/>
+      <property name="&lt;Super&gt;b" type="string" value="exo-open --launch TerminalEmulator"/>
       <property name="&lt;Super&gt;x" type="string" value="rofi -show"/>
       <property name="&lt;Super&gt;f" type="string" value="thunar"/>
       <property name="&lt;Super&gt;w" type="string" value="rofi -show drun -drun-categories WebBrowser"/>
@@ -63,7 +63,7 @@
       <property name="&lt;super&gt;s" type="string" value="bash -c &apos;sh ~/.config/rofi/search_home.sh&apos;"/>
       <property name="&lt;Super&gt;u" type="string" value="xfce4-terminal -e 'yay'"/>
       <property name="&lt;Super&gt;m" type="string" value="xfce4-terminal -e 'htop'"/>
-      <property name="&lt;Super&gt;b" type="string" value="xfce4-terminal -e 'bash'"/>
+      <property name="&lt;Super&gt;t" type="string" value="xfce4-terminal -e 'fish'"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

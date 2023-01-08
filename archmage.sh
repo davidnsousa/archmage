@@ -98,7 +98,7 @@ setup_DE () {
     echo
     echo "Change hostname to archmage:"
     echo
-    sudo hostnamectl set-hostname Archmage 
+    sudo hostnamectl set-hostname archmage 
     menu 4
 }
 
@@ -128,6 +128,9 @@ remove_packages () {
 # working dir
 ARCHMAGEDIR=$(pwd)
 # install libnewt for whiptail if not installed
+echo
+echo "Install libnewt for archmage whiptail menu::"
+echo
 sudo pacman -S --needed libnewt
 # run automatically
 AUTOMATIC=false

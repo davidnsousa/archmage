@@ -14,7 +14,8 @@ PKGS=(
     arc-solid-gtk-theme
     arc-icon-theme
     ttf-opensans
-    breeze-blue-cursor-theme 
+    breeze-blue-cursor-theme
+    fish
 )
 
 # INSTALL packages
@@ -48,3 +49,12 @@ cp -r config/config_xfce/* ${HOME}/.config
 # autostart apps
 mkdir ${HOME}/.config/autostart
 cp /usr/share/applications/conky.desktop ${HOME}/.config/autostart
+# bash settings
+echo "exec fish" > ${HOME}/.bashrc
+# remove fish greeting
+fish -c "set -U fish_greeting"
+# choose fish prompt
+echo
+echo "Costumize fish prompt:"
+echo
+fish -c "fish_config prompt choose informative; fish_config prompt save"

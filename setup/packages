@@ -3,7 +3,6 @@ gparted
 wget
 gnome-keyring
 neofetch
-fish
 xarchiver
 catfish
 bitwarden

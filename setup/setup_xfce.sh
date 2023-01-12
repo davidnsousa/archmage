@@ -16,6 +16,9 @@ PKGS=(
     ttf-opensans
     breeze-blue-cursor-theme
     fish
+    bluez
+    bluez-utils
+    blueman
 )
 
 # INSTALL packages
@@ -29,6 +32,7 @@ echo "Enable services:"
 echo
 sudo systemctl enable lightdm.service
 sudo systemctl enable NetworkManager.service
+sudo systemctl enable bluetooth.service
 
 # SETTINGS
 

@@ -1,4 +1,5 @@
+pcmanfm --desktop &
 xcompmgr &
-nitrogen --restore &
 dunst &
 sh $XDG_CONFIG_HOME/lemonbar/lemonbar.sh &
+

@@ -17,7 +17,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=geany -i
 export TERMINAL=lxterminal
 export FILEMANAGER=pcmanfm
-export SETWALLPAPER=nitrogen /usr/share/backgrounds/archmage
 export SETAPPEARANCE=lxappearance
 export SETDEFAPPS=selectdefaultapplication
 export CTRLSOUND=pavucontrol

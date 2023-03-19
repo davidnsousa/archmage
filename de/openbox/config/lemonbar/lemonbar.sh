@@ -18,7 +18,7 @@ system_kernel() {
 update_system() {
 	nupdates=$(cat ~/.nupdates)
 	if [ $nupdates != 0 ]; then
-		echo "%{A:$TERMINAL -e yay &:}%{F#3941d6} \uf17c %{F-}%{A}"
+		echo "%{A:$TERMINAL -e yay &:}%{F#3941d6} \uf17c%{F-}%{A}"
 	else
 		echo " \uf17c "
 	fi
@@ -139,17 +139,29 @@ exit_ob(){
 launchers_status_bar() {
 	echo " %{A:sh $XDG_CONFIG_HOME/lemonbar/launch_apps.sh &:} \uf0c9%{A}
 		%{A:sh $XDG_CONFIG_HOME/lemonbar/search_home.sh &:} \ue521%{A}
-		%{A:sh $XDG_CONFIG_HOME/lemonbar/configurations.sh &:} \uf085%{A}
+		%{A:$EDITOR -i $XDG_CONFIG_HOME/openbox/* $XDG_CONFIG_HOME/lemonbar/* /home/david/.config/gtk-3.0/settings.ini $HOME/.gtkrc-2.0 $HOME/.bashrc $XDG_CONFIG_HOME/mimeapps.list &:} \uf085%{A}
+		%{A:arandr &:} \ue163%{A}
 		%{A:sh $XDG_CONFIG_HOME/lemonbar/keybindings.sh &:} \uf11c%{A}
-		%{A: openbox --restart & killall -SIGUSR2 lemonbar & sh $XDG_CONFIG_HOME/lemonbar/lemonbar.sh &:} \uf2f1%{A}" 
+		%{A: openbox --restart & killall -SIGUSR2 lemonbar && sh $XDG_CONFIG_HOME/lemonbar/lemonbar.sh &:} \uf2f1%{A}" 
+}
+
+ext_devices() {
+	device_list=""
+	devices=$(ls /run/media/$(whoami))
+	for device in $devices; do
+		device_path=$(df | grep $device | awk '{print $6}')
+		device_usage=$(df | grep $device | awk '{print $5}')
+		device_list+="%{F#06cf00}%{A:$FILEMANAGER $device_path &:} \uf287%{A}%{F-} $device $device_usage "
+	done
+	echo $device_list
 }
 
 # STATUS BAR
 
 while true; do
     BAR_S="%{l}$(update_system)
-    $(system_kernel)
     $(launchers_status_bar)
+    $(ext_devices)
     %{r}
     %{A:$TERMINAL -e htop &:}
 	$(cpu) 
@@ -178,9 +190,9 @@ button_state() {
     DEC_ID1=$(printf "%d" $active_win)
     DEC_ID2=$(printf "%d" $1)
     if [ $DEC_ID1 == $DEC_ID2 ]; then
-        echo "%{B#5294e2} $2 %{B-}"
+        echo "%{B#5294e2} \x20 $2 \x20 %{B-}"
     else
-        echo " $2 "
+        echo " \x20 $2 \x20 "
     fi
 }
 
@@ -193,7 +205,7 @@ launchers_taskbar() {
 
 xev -root | grep -E --line-buffered "_NET_ACTIVE_WINDOW|CreateNotify|DestroyNotify" | while read line; do
     IDS=$(wmctrl -l | awk '$2 == "0"' | awk '{print $1}')
-    BAR_INPUT="$(launchers_taskbar)%{c}"
+    BAR_INPUT="%{c}"
     for ID in $IDS; do
         NAME=$(wmctrl -lx | grep $ID |awk '{split($3, a, "."); print a[2]}')
         BAR_INPUT+="%{A: wmctrl -i -a $ID &:}%{A3: wmctrl -i -c $ID &:}$(button_state $ID $NAME)%{A}%{A3}"

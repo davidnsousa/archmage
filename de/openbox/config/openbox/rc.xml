@@ -328,11 +328,6 @@
         <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/search_home.sh'</command>
       </action>
     </keybind>
-	<keybind key="W-c">
-      <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/configurations.sh '</command>
-      </action>
-    </keybind>
 	<keybind key="W-k">
       <action name="Execute">
         <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/keybindings.sh '</command>

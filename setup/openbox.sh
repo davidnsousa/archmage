@@ -15,14 +15,12 @@ PKGS=(
     arc-solid-gtk-theme
     arc-icon-theme
     ttf-dejavu
-    breeze-blue-cursor-theme
     fish
     bluez
     bluez-utils
     blueman
     man-db
     pcmanfm
-    nitrogen
     arandr
     dunst
     mirage
@@ -30,8 +28,6 @@ PKGS=(
     xarchiver
     xf86-input-synaptics
     gscreenshot
-    selectdefaultapplication-git
-    lxappearance-gtk3
     lxterminal
     ttf-font-awesome
     lemonbar-xft-git

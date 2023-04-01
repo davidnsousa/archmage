@@ -243,7 +243,7 @@
     <!-- Keybindings for running applications -->
         <keybind key="W-c">
       <action name="Execute">
-        <command>bash -c '$EDITOR $XDG_CONFIG_HOME/openbox/* $XDG_CONFIG_HOME/lemonbar/* $HOME/.config/gtk-3.0/settings.ini $HOME/.gtkrc-2.0 $HOME/.bashrc'</command>
+        <command>bash -c '$EDITOR $XDG_CONFIG_HOME/openbox/* $XDG_CONFIG_HOME/lemonbar/* $HOME/.config/gtk-3.0/settings.ini $HOME/.gtkrc-2.0 $HOME/.bashrc $HOME/.Xresources'</command>
       </action>
     </keybind>
     <keybind key="W-r">

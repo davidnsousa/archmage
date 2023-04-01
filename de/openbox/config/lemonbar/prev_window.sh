@@ -1,6 +1,7 @@
 #!/bin/sh
 
-IDS=($(wmctrl -l | awk '$2 == "0"' | awk '{print $1}' | tac))
+deskid=$(wmctrl -d | grep '*' | cut -d ' ' -f 1)
+IDS=($(wmctrl -l | awk '$2 == "'"$deskid"'"' | awk '{print $1}' | tac))
 wmctrl -l | awk '$2 == "0"'
 while true; do
   for (( i=0; i<${#IDS[@]}; i++ )); do
@@ -12,7 +13,5 @@ while true; do
       wmctrl -i -a ${IDS[$next_index]}
       break 2
     fi
-    echo $i
   done
-  echo fora
 done

@@ -2,10 +2,11 @@ PKGS=(
     xorg-server
     xorg-xkill
     xorg-xev
+    xdg-utils
+    xterm
+    xcompmgr
     lightdm
     lightdm-gtk-greeter
-    xdg-utils
-    xcompmgr
     gvfs
     htop
     pavucontrol
@@ -28,10 +29,9 @@ PKGS=(
     xarchiver
     xf86-input-synaptics
     gscreenshot
-    lxterminal
     ttf-font-awesome
     lemonbar-xft-git
-    wmctrl 
+    wmctrl
     dmenu
     pactl
 )
@@ -63,7 +63,8 @@ sudo cp art/logo/* /usr/share/pixmaps/
 # copy configuration files
 cp -r de/openbox/config/* ${HOME}/.config
 cp de/openbox/gtkrc-2.0 ${HOME}/.gtkrc-2.0
-cp de/openbox/.bashrc ${HOME}/.bashrc
+cp de/openbox/bashrc ${HOME}/.bashrc
+cp de/openbox/Xresources ${HOME}/.Xresources
 sudo cp de/openbox/70-synaptics.conf /etc/X11/xorg.conf.d/
 # remove fish greeting
 fish -c "set -U fish_greeting"
@@ -72,5 +73,3 @@ echo
 echo "Costumize fish prompt:"
 echo
 fish -c "fish_config prompt choose informative; fish_config prompt save"
-# set wallpapper
-nitrogen /usr/share/backgrounds/archmage/archmage-simple.png

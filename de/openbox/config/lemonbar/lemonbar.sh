@@ -16,11 +16,11 @@ system_kernel() {
 }
 
 update_system() {
-	nupdates=$(cat ~/.nupdates)
-	if [ $nupdates != 0 ]; then
-		echo "%{A:$TERMINAL -e yay &:}%{F#3941d6} \uf17c%{F-}%{A}"
+	test -e ~/.nupdates && nupdates=$(cat ~/.nupdates)
+	test -e ~/.nupdates && if [ "$nupdates" != 0 ]; then
+		echo "%{A:$TERMINAL -e yay &:}%{F#06cf00} \uf35b%{F-}%{A}"
 	else
-		echo " \uf17c "
+		echo " "
 	fi
 }
 
@@ -137,17 +137,12 @@ exit_ob(){
 }
 
 launchers_status_bar() {
-	echo " %{A:sh $XDG_CONFIG_HOME/lemonbar/launch_apps.sh &:} \uf0c9%{A}
-		%{A:sh $XDG_CONFIG_HOME/lemonbar/search_home.sh &:} \ue521%{A}
-		%{A:$EDITOR -i $XDG_CONFIG_HOME/openbox/* $XDG_CONFIG_HOME/lemonbar/* /home/david/.config/gtk-3.0/settings.ini $HOME/.gtkrc-2.0 $HOME/.bashrc $XDG_CONFIG_HOME/mimeapps.list &:} \uf085%{A}
-		%{A:arandr &:} \ue163%{A}
-		%{A:sh $XDG_CONFIG_HOME/lemonbar/keybindings.sh &:} \uf11c%{A}
-		%{A: openbox --restart & killall -SIGUSR2 lemonbar && sh $XDG_CONFIG_HOME/lemonbar/lemonbar.sh &:} \uf2f1%{A}" 
+	echo "%{A:sh $XDG_CONFIG_HOME/lemonbar/keybindings.sh &:} \uf11c%{A}" 
 }
 
 ext_devices() {
 	device_list=""
-	devices=$(ls /run/media/$(whoami))
+	test -e /run/media/$(whoami) && devices=$(ls /run/media/$(whoami))
 	for device in $devices; do
 		device_path=$(df | grep $device | awk '{print $6}')
 		device_usage=$(df | grep $device | awk '{print $5}')
@@ -159,9 +154,9 @@ ext_devices() {
 # STATUS BAR
 
 while true; do
-    BAR_S="%{l}$(update_system)
-    $(launchers_status_bar)
+    BAR_S="%{l}$(launchers_status_bar)
     $(ext_devices)
+    $(update_system)
     %{r}
     %{A:$TERMINAL -e htop &:}
 	$(cpu) 
@@ -203,11 +198,20 @@ launchers_taskbar() {
 
 # TASKBAR
 
-xev -root | grep -E --line-buffered "_NET_ACTIVE_WINDOW|CreateNotify|DestroyNotify" | while read line; do
-    IDS=$(wmctrl -l | awk '$2 == "0"' | awk '{print $1}')
-    BAR_INPUT="%{c}"
+xev -root | grep -E --line-buffered "_NET_ACTIVE_WINDOW|CreateNotify|DestroyNotify|_NET_CURRENT_DESKTOP" | while read line; do
+	deskid=$(wmctrl -d | grep '*' | cut -d ' ' -f 1)
+	desktops=''
+	for dID in $(wmctrl -d | awk '{print $1}'); do
+		if [ $deskid == $dID ]; then
+			desktops+="%{B#5294e2}\x20$dID\x20%{B-}"
+		else
+			desktops+="%{A: wmctrl -s $dID &:}\x20$dID\x20%{A}"
+		fi
+	done
+    IDS=$(wmctrl -l | awk '$2 == "'"$deskid"'"' | awk '{print $1}')
+    BAR_INPUT="%{l}$desktops %{c}"
     for ID in $IDS; do
-        NAME=$(wmctrl -lx | grep $ID |awk '{split($3, a, "."); print a[2]}')
+        NAME=$(wmctrl -l | grep $ID | awk '{$1=""; $2=""; $3=""; title=substr($0,4,10); if(length($0)>13) title=title"..."; print title}')
         BAR_INPUT+="%{A: wmctrl -i -a $ID &:}%{A3: wmctrl -i -c $ID &:}$(button_state $ID $NAME)%{A}%{A3}"
     done
     echo -e $BAR_INPUT

@@ -1,12 +1,11 @@
 PKGS=(
     xorg-server
+    xorg-xinit
     xorg-xkill
     xorg-xev
     xdg-utils
     xterm
     xcompmgr
-    lightdm
-    lightdm-gtk-greeter
     gvfs
     htop
     pavucontrol
@@ -43,8 +42,6 @@ for PKG in ${PKGS[@]}; do
 done
 
 # ENABLE SERVICES
-
-sudo systemctl enable lightdm.service
 sudo systemctl enable NetworkManager.service
 sudo systemctl enable bluetooth.service
 
@@ -53,14 +50,12 @@ sudo gpasswd -a $USER video
 
 # SETTINGS
 
-# lightdm settings
-sudo cp de/openbox/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 # copy archmage artwork
-sudo mkdir /usr/share/backgrounds
-sudo mkdir /usr/share/backgrounds/archmage
-sudo cp art/backgrounds/* /usr/share/backgrounds/archmage
+sudo mkdir ${HOME}/backgrounds
+sudo cp art/backgrounds/* ${HOME}/backgrounds
 sudo cp art/logo/* /usr/share/pixmaps/
 # copy configuration files
+cp de/openbox/xinitrc ${HOME}/.xinitrc
 cp -r de/openbox/config/* ${HOME}/.config
 cp de/openbox/gtkrc-2.0 ${HOME}/.gtkrc-2.0
 cp de/openbox/bashrc ${HOME}/.bashrc

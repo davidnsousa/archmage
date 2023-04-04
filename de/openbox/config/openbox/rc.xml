@@ -243,12 +243,7 @@
     <!-- Keybindings for running applications -->
         <keybind key="W-c">
       <action name="Execute">
-        <command>bash -c '$EDITOR $XDG_CONFIG_HOME/openbox/* $XDG_CONFIG_HOME/lemonbar/* $HOME/.config/gtk-3.0/settings.ini $HOME/.gtkrc-2.0 $HOME/.bashrc $HOME/.Xresources $HOME/.xinitrc'</command>
-      </action>
-    </keybind>
-    <keybind key="W-r">
-      <action name="Execute">
-        <command>bash -c 'openbox --restart &amp;&amp; killall -SIGUSR2 lemonbar &amp;&amp; sh $XDG_CONFIG_HOME/lemonbar/lemonbar.sh &amp;&amp; xrdb -merge ~/.Xresources '</command>
+        <command>bash -c '$EDITOR $XDG_CONFIG_HOME/openbox/* $XDG_CONFIG_HOME/scripts/* $HOME/.config/gtk-3.0/settings.ini $HOME/.gtkrc-2.0 $HOME/.bashrc $HOME/.Xresources $HOME/.xinitrc'</command>
       </action>
     </keybind>
    <keybind key="W-t">
@@ -293,32 +288,32 @@
     </keybind>  
 	<keybind key="W-w">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/wifi_menu.sh '</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/wifi_menu.sh '</command>
       </action>
     </keybind>
 	<keybind key="W-n">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/wifi_menu_right_click.sh '</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/wifi_menu_right_click.sh '</command>
       </action>
     </keybind>
 	<keybind key="W-x">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/launch_apps.sh'</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/launch_apps.sh'</command>
       </action>
     </keybind>
 	<keybind key="W-s">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/search_home.sh'</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/search_home.sh'</command>
       </action>
     </keybind>
 	<keybind key="W-k">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/keybindings.sh '</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/keybindings.sh '</command>
       </action>
     </keybind>
    <keybind key="W-e">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/exit_menu.sh'</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/exit_menu.sh'</command>
       </action>
     </keybind>
 	<keybind key="XF86AudioRaiseVolume">
@@ -348,12 +343,12 @@
     </keybind>
     	<keybind key="A-Tab">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/next_window.sh'</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/next_window.sh'</command>
       </action>
 	</keybind>
     <keybind key="A-S-Tab">
       <action name="Execute">
-        <command>bash -c 'sh $XDG_CONFIG_HOME/lemonbar/prev_window.sh'</command>
+        <command>bash -c 'sh $XDG_CONFIG_HOME/scripts/prev_window.sh'</command>
       </action>
     </keybind>
   </keyboard>

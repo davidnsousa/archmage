@@ -133,11 +133,12 @@ clock() {
 }
 
 exit_ob(){
-	echo "%{A:sh $XDG_CONFIG_HOME/lemonbar/exit_menu.sh &:}\uf011%{A}"
+	echo "%{A:sh $XDG_CONFIG_HOME/scripts/exit_menu.sh &:}\uf011%{A}"
 }
 
 launchers_status_bar() {
-	echo "%{A:sh $XDG_CONFIG_HOME/lemonbar/keybindings.sh &:} \uf11c%{A}" 
+	echo "%{A:sh $XDG_CONFIG_HOME/scripts/keybindings.sh &:} \uf11c%{A} 
+		%{A: sh $XDG_CONFIG_HOME/scripts/set_wallpaper.sh &:} \uf55d%{A}" 
 }
 
 ext_devices() {
@@ -166,13 +167,13 @@ while true; do
 	$(battery) 
     %{A:pavucontrol &:}$(sound_volume)%{A} 
     $(backlight) 
-    %{A3:sh $XDG_CONFIG_HOME/lemonbar/bluetooth_toggle.sh &:}%{A:blueman-manager &:}$(bluetooth)%{A}%{A3}
-    %{A3:sh $XDG_CONFIG_HOME/lemonbar/wifi_menu_right_click.sh &:}%{A:sh $XDG_CONFIG_HOME/lemonbar/wifi_menu.sh &:}$(wifi)%{A} 
+    %{A3:sh $XDG_CONFIG_HOME/scripts/bluetooth_toggle.sh &:}%{A:blueman-manager &:}$(bluetooth)%{A}%{A3}
+    %{A3:sh $XDG_CONFIG_HOME/scripts/wifi_menu_right_click.sh &:}%{A:sh $XDG_CONFIG_HOME/scripts/wifi_menu.sh &:}$(wifi)%{A} 
     $(vpn) 
     $(ethernet) 
     %{A3}
     $(my_uptime)
-    %{A:sh $XDG_CONFIG_HOME/lemonbar/wifi-menu.sh &:}$(clock)%{A} 
+    %{A:sh $XDG_CONFIG_HOME/scripts/wifi-menu.sh &:}$(clock)%{A} 
     $(exit_ob)" 
     echo -e $BAR_S
     sleep 1

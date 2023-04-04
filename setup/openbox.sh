@@ -33,6 +33,7 @@ PKGS=(
     wmctrl
     dmenu
     pactl
+    feh
 )
 
 # INSTALL packages
@@ -50,10 +51,6 @@ sudo gpasswd -a $USER video
 
 # SETTINGS
 
-# copy archmage artwork
-sudo mkdir ${HOME}/backgrounds
-sudo cp art/backgrounds/* ${HOME}/backgrounds
-sudo cp art/logo/* /usr/share/pixmaps/
 # copy configuration files
 cp de/openbox/xinitrc ${HOME}/.xinitrc
 cp -r de/openbox/config/* ${HOME}/.config
@@ -68,3 +65,4 @@ echo
 echo "Costumize fish prompt:"
 echo
 fish -c "fish_config prompt choose informative; fish_config prompt save"
+echo fish > .bashrc

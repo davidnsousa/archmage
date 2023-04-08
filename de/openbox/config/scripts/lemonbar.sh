@@ -212,8 +212,8 @@ xev -root | grep -E --line-buffered "_NET_ACTIVE_WINDOW|CreateNotify|DestroyNoti
     IDS=$(wmctrl -l | awk '$2 == "'"$deskid"'"' | awk '{print $1}')
     BAR_INPUT="%{l}$desktops %{c}"
     for ID in $IDS; do
-        NAME=$(wmctrl -l | grep $ID | awk '{$1=""; $2=""; $3=""; title=substr($0,4,10); if(length($0)>13) title=title"..."; print title}')
-        BAR_INPUT+="%{A: wmctrl -i -a $ID &:}%{A3: wmctrl -i -c $ID &:}$(button_state $ID $NAME)%{A}%{A3}"
+        NAME=$(wmctrl -l | grep $ID | awk '{$1=""; $2=""; $3=""; sub(/^ */, ""); title=$0; if(length(title)>10) title=substr(title, 1, 10) " ..."; print title}')
+        BAR_INPUT+="%{A: wmctrl -i -a $ID &:}%{A3: wmctrl -i -c $ID &:}$(button_state $ID "$NAME")%{A}%{A3}"
     done
     echo -e $BAR_INPUT
 done | lemonbar -a 100 -b -B "#383c4a" -f "DejaVu Sans:size=9" -f 'Font Awesome 6 Free:size=10' -f 'Font Awesome 6 Brands:size=10' -f 'Font Awesome 6 Free Solid:size=10' | sh &

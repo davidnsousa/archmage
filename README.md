@@ -1,3 +1,7 @@
+# NOTICE
+
+Project abandoned. Continued at https://github.com/davidnsousa/dlemonbox
+
 # Archmage - Arch Linux Post Installation Setup
 
 Post-install bash script for Arch Linux.
